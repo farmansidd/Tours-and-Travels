@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preloader Diagnostic</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin: 5px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .success {
+            color: green;
+            font-weight: bold;
+        }
+        .error {
+            color: red;
+            font-weight: bold;
+        }
+        #results {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Preloader Diagnostic Tool</h1>
+    <p>This tool will help diagnose and fix preloader issues across your website.</p>
+    
+    <h2>Quick Fixes</h2>
+    <button id="fixPreloader">Force Remove Preloader</button>
+    <button id="fixLocalStorage">Clear Booking Data</button>
+    <button id="testBooking">Test Booking System</button>
+    
+    <h2>Diagnostic Results</h2>
+    <div id="results">
+        <p>Click a button above to run diagnostics.</p>
+    </div>
+    
+    <script src="js/jquery.js"></script>
+    <script>
+        // Function to add a message to the results area
+        function addMessage(message, isError = false) {
+            const resultsDiv = document.getElementById('results');
+            const messageElement = document.createElement('p');
+            messageElement.textContent = message;
+            messageElement.className = isError ? 'error' : 'success';
+            resultsDiv.appendChild(messageElement);
+        }
+        
+        // Force remove preloader
+        document.getElementById('fixPreloader').addEventListener('click', function() {
+            try {
+                $('.preloader').fadeOut(0);
+                document.querySelectorAll('.preloader').forEach(el => el.style.display = 'none');
+                $('body').addClass('page-loaded page-done');
+                addMessage('Preloader has been forcefully removed.');
+            } catch (error) {
+                addMessage('Error removing preloader: ' + error.message, true);
+            }
+        });
+        
+        // Clear localStorage data for bookings
+        document.getElementById('fixLocalStorage').addEventListener('click', function() {
+            try {
+                localStorage.removeItem('trekerBookings');
+                addMessage('Booking data has been cleared from localStorage.');
+            } catch (error) {
+                addMessage('Error clearing booking data: ' + error.message, true);
+            }
+        });
+        
+        // Test booking system
+        document.getElementById('testBooking').addEventListener('click', function() {
+            try {
+                // Initialize empty bookings if not present
+                if (!localStorage.getItem('trekerBookings')) {
+                    localStorage.setItem('trekerBookings', JSON.stringify([]));
+                }
+                
+                // Create a test booking
+                const testBooking = {
+                    id: 'TEST-' + Date.now(),
+                    username: 'Test User',
+                    email: 'test@example.com',
+                    phone: '123-456-7890',
+                    travelers: '2',
+                    date: new Date().toISOString().split('T')[0],
+                    destination: 'Test Destination',
+                    tourType: 'Test Tour',
+                    bookingDate: new Date().toISOString(),
+                    status: 'Pending'
+                };
+                
+                // Save the test booking
+                const bookings = JSON.parse(localStorage.getItem('trekerBookings')) || [];
+                bookings.push(testBooking);
+                localStorage.setItem('trekerBookings', JSON.stringify(bookings));
+                
+                addMessage('Test booking has been created successfully.');
+                addMessage('Total bookings: ' + bookings.length);
+            } catch (error) {
+                addMessage('Error testing booking system: ' + error.message, true);
+            }
+        });
+        
+        // Run initial diagnostics
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                // Check if jQuery is working
+                if (typeof $ === 'function') {
+                    addMessage('jQuery is loaded correctly.');
+                } else {
+                    addMessage('jQuery is not loaded correctly!', true);
+                }
+                
+                // Check localStorage access
+                try {
+                    localStorage.setItem('test', 'test');
+                    localStorage.removeItem('test');
+                    addMessage('localStorage is accessible.');
+                } catch (e) {
+                    addMessage('localStorage cannot be accessed!', true);
+                }
+                
+                // Check bookings
+                try {
+                    const bookings = JSON.parse(localStorage.getItem('trekerBookings')) || [];
+                    addMessage('Current bookings: ' + bookings.length);
+                } catch (e) {
+                    addMessage('Error reading bookings from localStorage!', true);
+                }
+            } catch (error) {
+                addMessage('Error running diagnostics: ' + error.message, true);
+            }
+        });
+    </script>
+</body>
+</html> 

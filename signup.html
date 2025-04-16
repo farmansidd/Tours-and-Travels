@@ -1,0 +1,1002 @@
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Treker - Sign Up</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link href="css/responsive.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]--> 
+
+<!-- Add this CSS to the head section, just after the existing stylesheets -->
+<style>
+    /* OTP Input Styles */
+    .otp-container {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px 0;
+        gap: 10px;
+    }
+    
+    .otp-input {
+        width: calc(16.666% - 8px);
+        height: 60px;
+        text-align: center;
+        font-size: 24px;
+        font-weight: 600;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        background-color: #f9f9f9;
+        box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+    
+    .otp-input:focus {
+        border-color: #3498db;
+        box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.25);
+        outline: none;
+        background-color: white;
+    }
+    
+    .resend-container {
+        text-align: center;
+        margin: 15px 0;
+    }
+    
+    #otp-verification-container {
+        background-color: white;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        max-width: 480px;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 100;
+        width: 90%;
+    }
+    
+    #verify-otp-button, #go-back-button {
+        margin-top: 15px;
+    }
+    
+    #error-message, #success-message {
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 14px;
+        display: none;
+    }
+    
+    #error-message {
+        background-color: #ffebee;
+        color: #e53935;
+    }
+    
+    #success-message {
+        background-color: #e8f5e9;
+        color: #43a047;
+    }
+    
+    @media (max-width: 480px) {
+        .otp-input {
+            height: 50px;
+            font-size: 20px;
+        }
+    }
+</style>
+
+</head>
+
+<body>
+  <div class="page-wrapper"> 
+  
+    <!-- Preloader -->
+    <div class="preloader"></div> 
+    <div class="search-backdrop"></div>
+    <!-- Main Header-->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="auto-container">
+                <div class="inner clearfix">
+                    <div class="top-left clearfix">
+                        <ul class="info clearfix">
+                            <li><i class="icon fa fa-envelope"></i> <a href="mailto:INFO@TREKER.COM">INFO@TREKER.COM</a></li>
+                            <li><i class="icon fa fa-phone-circle"></i> <a href="tel:+11256326501">+11 256 3265 01</a></li>
+                        </ul>
+                    </div>
+                    <div class="top-right clearfix">
+                        <div class="lang-box">
+                            <div class="lang-btn clearfix"><span class="img far fa-globe-americas"></span><span class="txt">Eng</span><span class="icon far fa-angle-down"></span></div>
+                            <ul class="lang-list">
+                                <li><a href="#">Tur</a></li>
+                                <li><a href="#">Esp</a></li>
+                                <li><a href="#">Rus</a></li>
+                            </ul>
+                        </div>
+                        <div class="login"><i class="icon fa fa-user"></i> <a href="login.html">SIGN IN</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Upper -->
+        <div class="header-upper">        
+            <div class="auto-container">
+                <!-- Main Box -->
+                <div class="main-box clearfix">
+                    <!--Logo-->
+                    <div class="logo-box">
+                         <div class="logo"><a href="index.html" title="Treker"><img src="images/logo.svg" alt="" title="Treker"></a></div>
+                    </div>
+
+                    <div class="nav-box clearfix">
+                        <!--Nav Outer-->
+                        <div class="nav-outer clearfix">         
+                            <nav class="main-menu">
+                                <ul class="navigation clearfix">
+                                    <li class="dropdown"><a href="index.html">Home</a>
+                                        <ul>
+                                            <li><a href="index.html">Home 01</a></li>
+                                            <li><a href="index-2.html">Home 02</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="about.html">About Us</a>
+                                        <ul>
+                                            <li><a href="team.html">Our Team</a></li>
+                                            <li><a href="team-member.html">Team Member</a></li>
+                                            <li><a href="faq.html">FAQs</a></li>
+                                            <li><a href="gallery.html">Gallery</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="destinations-2.html">Destinations</a></li>
+                                    <li class="dropdown"><a href="#">Explore</a>
+                                        <ul>
+                                            <li><a href="himalaya.html">Himalaya</a></li>
+                                            <li><a href="mumbai.html">Mumbai</a></li>
+                                            <li><a href="shimla.html">Shimla</a></li>
+                                            <li><a href="darjeeling.html">Darjeeling</a></li>
+                                            <li><a href="goa.html">Goa</a></li>
+                                            <li><a href="jaipur.html">Jaipur</a></li>
+                                            <li><a href="andaman-nicobar.html">Andaman & Nicobar Islands</a></li>
+                                            <li><a href="agra.html">Agra</a></li>
+                                            <li><a href="assam.html">Assam</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="blogs.html">Blogs</a></li>
+                                    <li class="current"><a href="signup.html">Sign Up</a></li>
+                                    <li><a href="my-bookings.html">My Bookings</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <!-- Main Menu End-->
+                        </div>
+                        <!--Nav Outer End-->
+
+                        <div class="links-box clearfix">
+                            <div class="link search-btn search-toggle"><span class="icon far fa-search"></span></div>
+                            <div class="link fav-btn"><a href="#"><span class="icon far fa-heart"></span><span class="count">02</span></a></div>
+                            <div class="link cart-btn"><a href="#" class="clearfix"><div class="cart-info"><span class="icon far fa-shopping-cart"></span>00 Items</div><div class="amount">$ 00:00</div></a></div>
+                        </div>
+
+                        <!-- Hidden Nav Toggler -->
+                        <div class="nav-toggler">
+                            <button class="hidden-bar-opener"><span class="icon"><img src="images/icons/menu-icon.svg" alt=""></span></button>
+                        </div>
+
+                    </div>
+
+                    <!-- End Header Upper -->
+                    <div class="search-box">
+                        <div class="outer-container">
+                            <div class="inner-box">
+                                <div class="form-box">
+                                    <div class="s-close-btn"><span class="icon far fa-times"></span></div>
+                                    <span class="s-icon fa fa-search"></span>
+                                    <form method="post" action="index.html">
+                                        <div class="form-group">
+                                            <input type="search" name="search" value="" placeholder="Search Here" required="">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--End Main Header -->
+
+    <!--Search Backdrop-->
+    <div class="search-backdrop"></div>
+
+    
+    <!--Menu Backdrop-->
+    <div class="menu-backdrop"></div>
+
+    <!-- Hidden Navigation Bar -->
+    <section class="hidden-bar">
+        <!-- Hidden Bar Wrapper -->
+        <div class="hidden-bar-wrapper">
+            <div class="hidden-bar-closer"><span class="icon"><svg class="icon-close" role="presentation" viewBox="0 0 16 14"><path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path></svg></span></div>
+            <div class="nav-logo-box">
+                <div class="logo"><a href="index.html" title="Treker"><img src="images/logo.svg" alt="" title="Treker"></a></div>
+            </div>
+            <!-- .Side-menu -->
+            <div class="side-menu">
+                 <ul class="navigation clearfix">
+                    <li class="dropdown"><a href="index.html">Home</a>
+                        <ul>
+                            <li><a href="index.html">Home 01</a></li>
+                            <li><a href="index-2.html">Home 02</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="about.html">About Us</a>
+                        <ul>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="team-member.html">Team Member</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="current dropdown"><a href="shop.html">Shop</a>
+                        <ul>
+                            <li><a href="shop.html">Our Shop</a></li>
+                            <li><a href="product-single.html">Product Details</a></li>
+                            <li><a href="wishlist.html">My Wishlist</a></li>
+                            <li><a href="shopping-cart.html">Shopping Cart</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                            <li><a href="signup.html">Signup</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="reset-password.html">Forgot Password</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                    <li><a href="trekking.html">Trekking</a></li>
+                    <li class="dropdown"><a href="#">Pages</a>
+                        <ul>
+                            <li><a href="activities.html">Activities</a></li>
+                            <li><a href="destinations-2.html">Destinations 02</a></li>
+                            <li><a href="tours.html">Tours</a></li>
+                            <li><a href="packages.html">Packages 01</a></li>
+                            <li><a href="packages-2.html">Packages 02</a></li>
+                            <li><a href="booking.html">Booking</a></li>
+                            <li><a href="terms-conditions.html">Terms & Conditions</a></li>
+                            <li><a href="error-page.html">404 Page</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="blog.html">News</a>
+                        <ul>
+                            <li><a href="blog.html">Our Blog</a></li>
+                            <li><a href="blog-2.html">Blog Classic</a></li>
+                            <li><a href="blog-single.html">Blog Details</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div><!-- /.Side-menu -->
+            
+            <div class="links-box clearfix">
+                <div class="clearfix">
+                    <div class="link"><a href="login.html" class="theme-btn btn-style-one"><span>Login<i class="icon far fa-angle-right"></i></span></a></div>
+                    <div class="link"><a href="signup.html" class="theme-btn btn-style-two"><span>Sign Up<i class="icon far fa-angle-right"></i></span></a></div>
+                </div>
+            </div>
+        
+        </div><!-- / Hidden Bar Wrapper -->
+    </section>
+    <!-- / Hidden Bar -->
+
+    <div class="cart-backdrop"></div>
+    <!--Cart Sidebar-->
+    <div class="cart-sidebar">
+        <div class="cart-side-inner">
+            <div class="cart-side-header">
+                <div class="closer-btn"><span>Close</span></div>
+                <h5>Shopping Cart</h5>
+            </div>
+            <div class="prod-box">
+                <div class="prod-block">
+                    <div class="prod-inner">
+                        <div class="prod-thumb"><a href="#"><img src="images/resource/shop/shop-thumb-1.jpg" alt=""></a></div>
+                        <div class="remove-item"><a href="#"><i class="far fa-times"></i></a></div>
+                        <div class="prod-title"><a href="#">Smart Air Bag Travel</a></div>
+                        <div class="quantity-box">
+                            <div class="item-quantity">
+                                <input class="qty-spinner" type="text" value="1" name="quantity">
+                            </div>
+                        </div>
+                        <div class="calculations">1 x <span>$225.00</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lower-content">
+            <div class="count clearfix">
+                <span class="ttl">Subtotal</span>
+                <span class="dtl">$225.00</span>
+            </div>
+            <div class="links clearfix">
+                <div class="left"><a href="#" class="theme-btn btn-style-one"><span>View Cart</span></a></div>
+                <div class="right"><a href="#" class="theme-btn btn-style-two"><span>Checkout</span></a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner Section -->
+    <section class="inner-banner">
+        <div class="image-layer" style="background-image: url(images/background/banner-image-1.jpg);"></div>
+        <div class="auto-container">
+            <div class="content-box">
+                <h2>Sign Up</h2>
+                <div class="bread-crumb">
+                    <ul class="clearfix">
+                        <li><span class="icon-home fa fa-home"></span><a href="index.html">Home</a></li>
+                        <li class="current">Sign Up</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Banner Section -->
+
+    <!--Sign Up Section-->
+    <section class="signup-section">
+        <div class="auto-container">
+            <div class="row clearfix">
+                <div class="form-column col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner">
+                        <div class="title-box">
+                            <h2>Create an Account</h2>
+                            <div class="text">Please fill in the form below to create your account.</div>
+                        </div>
+                        <div class="form-box">
+                            <form id="signupForm" action="/api/signup" method="POST" onsubmit="signup(event); return false;">
+                                <div class="form-group" id="signup-message">
+                                    <input type="text" id="signup-username" name="name" placeholder="Full Name" required>
+                                    <span class="icon fal fa-user fa-fw"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="signup-email" name="email" placeholder="Email Address" required>
+                                    <span class="icon fal fa-envelope fa-fw"></span>
+                                </div>
+                                <div class="form-group">
+                                    <input type="password" id="signup-password" name="password" placeholder="Password" required>
+                                    <span class="icon fal fa-lock fa-fw"></span>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="theme-btn btn-style-one" id="signup-button">
+                                        <span class="txt">Sign Up<i class="fa fa-angle-right"></i></span>
+                                    </button>
+                                </div>
+                                <div class="bottom-text">
+                                    Already have an account? <a href="login.html">Login here</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this after your main form container but before any closing divs -->
+    <div id="otp-verification-container" style="display: none;">
+      <h3 class="auth-subtitle">Email Verification</h3>
+      <div id="error-message"></div>
+      <div id="success-message"></div>
+      <p class="auth-instruction">
+        We've sent a verification code to <strong id="verification-email"></strong>
+      </p>
+      
+      <div class="otp-container">
+        <input type="text" maxlength="1" class="otp-input" inputmode="numeric">
+        <input type="text" maxlength="1" class="otp-input" inputmode="numeric">
+        <input type="text" maxlength="1" class="otp-input" inputmode="numeric">
+        <input type="text" maxlength="1" class="otp-input" inputmode="numeric">
+        <input type="text" maxlength="1" class="otp-input" inputmode="numeric">
+        <input type="text" maxlength="1" class="otp-input" inputmode="numeric">
+      </div>
+      
+      <div class="resend-container">
+        <button id="resend-otp" class="btn btn-text" disabled>
+          Resend code in <span id="countdown">30</span>s
+        </button>
+      </div>
+      
+      <button id="verify-otp-button" class="btn btn-primary btn-block">
+        Verify Code
+      </button>
+      
+      <button id="go-back-button" class="btn btn-outline">
+        Change Email
+      </button>
+    </div>
+
+    <!--Main Footer-->
+    <footer class="footer-two">
+        <div class="bg-layer" style="background-image: url(images/background/footer-bg.png);"></div>
+        <div class="upper-section">
+            <div class="auto-container">
+
+                <div class="row clearfix">
+
+                    <div class="footer-column col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                        <!--Logo-->
+                        <div class="footer-logo">
+                            <div class="logo"><a href="index.html" title="Treker"><img src="images/logo.svg" alt="" title="Treker"></a></div>
+                        </div>
+                        <div class="footer-text">Treker was founded in 1991 by a group of safety-focused professionals who created The Wingman Standard for rigorously vetting air charter operators.</div>
+                        <div class="social-links">
+                            <ul class="clearfix">
+                                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="big-column col-xl-8 col-lg-12 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+
+                            <div class="footer-column col-lg-3 col-md-4 col-sm-12">
+                                <h6>Exlopre Treker</h6>
+                                <div class="links">
+                                    <ul>
+                                        <li><a href="#">Account</a></li>
+                                        <li><a href="#">Privacy Policy</a></li>
+                                        <li><a href="#">Affilitate</a></li><li><a href="#">Program</a></li>
+                                        <li><a href="#">Our Partner</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="footer-column col-lg-3 col-md-4 col-sm-12">
+                                <h6>Quick lInks</h6>
+                                <div class="links">
+                                    <ul>
+                                        <li><a href="#">About us</a></li>
+                                        <li><a href="#">News & press</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">FAQs</a></li>
+                                        <li><a href="#">Careers</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="info-block col-lg-6 col-md-4 col-sm-12">
+                                <h6>Address</h6>
+                                <div class="info">
+                                    <ul>
+                                        <li>Europe 45 Gloucester Road London DT1M 3BF <a href="tel:+44(0)2036715709">+44 (0)20 3671 5709</a></li>
+                                        <li>Europe 45 Gloucester Road London DT1M 3BF <a href="tel:+44(0)2036715709">+44 (0)20 3671 5709</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="f-bottom">
+            <div class="auto-container">
+                <div class="inner clearfix">
+                    <div class="copyright">Copyright &copy; 2022 Treker. All Rights Reserved. Designed by ThemeIM</div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+</div>
+<!--End pagewrapper--> 
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon"><img src="images/icons/arrow-up.svg" alt="" title="Go To Top"></span></div>
+
+<script src="js/jquery.js"></script>
+<script>
+// Global variables for OTP functionality
+let countdownTimer;
+let currentEmail = '';
+
+document.addEventListener('DOMContentLoaded', function() {
+    const otpInputs = document.querySelectorAll('.otp-input');
+    const signupForm = document.getElementById('signupForm');
+    const otpContainer = document.getElementById('otp-verification-container');
+    const verifyBtn = document.getElementById('verify-otp-button');
+    const resendBtn = document.getElementById('resend-otp');
+    const backBtn = document.getElementById('go-back-button');
+    const countdownSpan = document.getElementById('countdown');
+    
+    // Set up OTP input behavior
+    otpInputs.forEach((input, index) => {
+        // Allow only numbers and handle next/previous focus
+        input.addEventListener('input', function(e) {
+            this.value = this.value.replace(/[^0-9]/g, '');
+            
+            if (this.value.length === 1) {
+                if (index < otpInputs.length - 1) {
+                    otpInputs[index + 1].focus();
+                } else {
+                    // If it's the last input and filled, enable verify button
+                    verifyBtn.disabled = false;
+                }
+            }
+        });
+        
+        // Handle backspace
+        input.addEventListener('keydown', function(e) {
+            if (e.key === 'Backspace' && !this.value && index > 0) {
+                otpInputs[index - 1].focus();
+            }
+        });
+    });
+    
+    // Handle OTP paste
+    document.querySelector('.otp-container').addEventListener('paste', function(e) {
+        e.preventDefault();
+        const paste = e.clipboardData.getData('text').trim();
+        if (/^\d{6}$/.test(paste)) {
+            otpInputs.forEach((input, i) => {
+                input.value = paste[i] || '';
+            });
+            verifyBtn.disabled = false;
+        }
+    });
+
+    // Verify OTP button click
+    verifyBtn.addEventListener('click', async function() {
+        const enteredOtp = Array.from(otpInputs).map(input => input.value).join('');
+        
+        if (!/^\d{6}$/.test(enteredOtp)) {
+            showError('Please enter a valid 6-digit code');
+            return;
+        }
+
+        try {
+            verifyBtn.disabled = true;
+            const response = await fetch('/api/auth/verify-otp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: currentEmail,
+                    otp: enteredOtp,
+                    purpose: 'register'
+                })
+            });
+
+            const data = await response.json();
+            
+            if (data.success) {
+                showSuccess('Account verified successfully! Redirecting...');
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 2000);
+            } else {
+                showError(data.message || 'Invalid verification code');
+                verifyBtn.disabled = false;
+            }
+        } catch (error) {
+            showError('Network error. Please try again.');
+            verifyBtn.disabled = false;
+        }
+    });
+
+    // Resend OTP button click
+    resendBtn.addEventListener('click', async function() {
+        if (resendBtn.disabled) return;
+        
+        try {
+            const response = await fetch('/api/auth/request-otp', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email: currentEmail,
+                    purpose: 'register'
+                })
+            });
+
+            const data = await response.json();
+            if (data.success) {
+                showSuccess('Verification code resent successfully');
+                startResendCountdown();
+                // Clear existing OTP inputs
+                otpInputs.forEach(input => input.value = '');
+                otpInputs[0].focus();
+            } else {
+                showError(data.message || 'Failed to resend code');
+            }
+        } catch (error) {
+            showError('Network error. Please try again.');
+        }
+    });
+
+    // Go back button click
+    backBtn.addEventListener('click', function() {
+        otpContainer.style.display = 'none';
+        document.querySelector('.signup-section').style.display = 'block';
+        clearResendCountdown();
+        // Clear OTP inputs
+        otpInputs.forEach(input => input.value = '');
+    });
+});
+
+// Signup form submission
+async function signup(event) {
+    event.preventDefault();
+    const name = document.getElementById('signup-username').value;
+    const email = document.getElementById('signup-email').value;
+    const password = document.getElementById('signup-password').value;
+
+    if (!name || !email || !password) {
+        showError('All fields are required');
+        return;
+    }
+
+    try {
+        const response = await fetch('/api/signup', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, email, password })
+        });
+
+        const data = await response.json();
+        if (data.success) {
+            // Save user data to localStorage for later use
+            localStorage.setItem('user_email', email);
+            localStorage.setItem('user_name', name);
+            
+            currentEmail = email; // Store email for OTP verification
+            document.querySelector('.signup-section').style.display = 'none';
+            const otpContainer = document.getElementById('otp-verification-container');
+            otpContainer.style.display = 'block';
+            document.getElementById('verification-email').textContent = email;
+            
+            // Clear and focus first OTP input
+            const otpInputs = document.querySelectorAll('.otp-input');
+            otpInputs.forEach(input => input.value = '');
+            otpInputs[0].focus();
+            
+            // Disable verify button initially
+            document.getElementById('verify-otp-button').disabled = true;
+            
+            startResendCountdown();
+            showSuccess('Verification code sent to your email');
+        } else {
+            // Check if the error is about an already existing user
+            if (data.message && (data.message.includes('Email already registered') || 
+                data.message.includes('already exists') || 
+                data.message.includes('already registered'))) {
+                // Show specific message for existing users
+                showLoginRedirectError('This email is already registered. Please login instead.');
+            } else {
+                // Show generic error for other cases
+                showError(data.message || 'Signup failed');
+            }
+        }
+    } catch (error) {
+        console.error('Signup error:', error);
+        showError('Network error. Please try again.');
+    }
+}
+
+function startResendCountdown() {
+    const countdownSpan = document.getElementById('countdown');
+    const resendBtn = document.getElementById('resend-otp');
+    
+    clearResendCountdown();
+    let seconds = 30;
+    countdownSpan.textContent = seconds;
+    resendBtn.disabled = true;
+    
+    countdownTimer = setInterval(() => {
+        seconds--;
+        countdownSpan.textContent = seconds;
+        
+        if (seconds <= 0) {
+            clearResendCountdown();
+            resendBtn.textContent = 'Resend code';
+            resendBtn.disabled = false;
+        }
+    }, 1000);
+}
+
+function clearResendCountdown() {
+    if (countdownTimer) {
+        clearInterval(countdownTimer);
+        countdownTimer = null;
+    }
+    const resendBtn = document.getElementById('resend-otp');
+    if (resendBtn) resendBtn.disabled = false;
+}
+
+function showError(message) {
+    const errorElement = document.getElementById('error-message');
+    if (errorElement) {
+        errorElement.textContent = message;
+        errorElement.style.display = 'block';
+        setTimeout(() => {
+            errorElement.style.display = 'none';
+        }, 5000);
+    }
+}
+
+function showSuccess(message) {
+    const successElement = document.getElementById('success-message');
+    if (successElement) {
+        successElement.textContent = message;
+        successElement.style.display = 'block';
+        setTimeout(() => {
+            successElement.style.display = 'none';
+        }, 5000);
+    }
+}
+
+// Function to show error with a login link
+function showLoginRedirectError(message) {
+    const errorElement = document.getElementById('error-message');
+    if (errorElement) {
+        // Create a message with a login link
+        errorElement.innerHTML = `${message} <a href="login.html" class="login-link">Login here</a>`;
+        errorElement.style.display = 'block';
+        
+        // Keep this message visible longer since it has an action link
+        setTimeout(() => {
+            errorElement.style.display = 'none';
+        }, 10000);
+    }
+}
+</script>
+
+<!-- Add this before the closing </body> tag if you don't already have script tags -->
+<script>
+  // OTP Input Functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const otpInputs = document.querySelectorAll('.otp-input');
+    const signupForm = document.getElementById('signup-form'); // Update with your actual form ID
+    const otpContainer = document.getElementById('otp-verification-container');
+    const verifyBtn = document.getElementById('verify-otp-button');
+    const resendBtn = document.getElementById('resend-otp');
+    const backBtn = document.getElementById('go-back-button');
+    const countdownSpan = document.getElementById('countdown');
+    const verificationEmail = document.getElementById('verification-email');
+    let currentEmail = '';
+    let countdownTimer;
+    
+    // Set up OTP input behavior
+    otpInputs.forEach((input, index) => {
+      // Focus next input after input
+      input.addEventListener('input', function(e) {
+        if (input.value.length === 1 && index < otpInputs.length - 1) {
+          otpInputs[index + 1].focus();
+        }
+        
+        // Check if all inputs are filled
+        checkOtpCompleted();
+      });
+      
+      // Handle backspace
+      input.addEventListener('keydown', function(e) {
+        if (e.key === 'Backspace' && !input.value && index > 0) {
+          otpInputs[index - 1].focus();
+        }
+      });
+    });
+    
+    // Handle OTP paste
+    document.querySelector('.otp-container').addEventListener('paste', function(e) {
+      e.preventDefault();
+      const pasteData = e.clipboardData.getData('text').trim();
+      if (/^\d+$/.test(pasteData)) {
+        const digits = pasteData.slice(0, 6).split('');
+        digits.forEach((digit, i) => {
+          if (i < otpInputs.length) {
+            otpInputs[i].value = digit;
+          }
+        });
+        checkOtpCompleted();
+      }
+    });
+    
+    // Check if all OTP inputs are filled
+    function checkOtpCompleted() {
+      const isFilled = Array.from(otpInputs).every(input => input.value.length === 1);
+      if (isFilled) {
+        const otp = Array.from(otpInputs).map(input => input.value).join('');
+        // You can auto-submit here or wait for button click
+      }
+    }
+    
+    // Form submission - modify this to fit your existing form handler
+    if (signupForm) {
+      signupForm.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const formData = new FormData(signupForm);
+        currentEmail = formData.get('email');
+        
+        try {
+          // Replace with your actual API endpoint
+          const response = await fetch('/api/auth/register', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(Object.fromEntries(formData)),
+          });
+          
+          const data = await response.json();
+          
+          if (data.success) {
+            // Show OTP verification section
+            signupForm.parentElement.style.display = 'none';
+            otpContainer.style.display = 'block';
+            verificationEmail.textContent = currentEmail;
+            startResendCountdown();
+            otpInputs[0].focus();
+          } else {
+            showError(data.message || 'Registration failed. Please try again.');
+          }
+        } catch (error) {
+          showError('Network error. Please try again later.');
+        }
+      });
+    }
+    
+    // Verify OTP button click
+    if (verifyBtn) {
+      verifyBtn.addEventListener('click', async function() {
+        const otp = Array.from(otpInputs).map(input => input.value).join('');
+        
+        if (otp.length !== 6 || !/^\d+$/.test(otp)) {
+          showError('Please enter a valid 6-digit code');
+          return;
+        }
+        
+        try {
+          // Replace with your actual API endpoint
+          const response = await fetch('/api/auth/verify-otp', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email: currentEmail,
+              otp: otp,
+              purpose: 'register'
+            }),
+          });
+          
+          const data = await response.json();
+          
+          if (data.success) {
+            showSuccess('Account verified successfully! Redirecting to login...');
+            setTimeout(() => {
+              window.location.href = 'login.html';
+            }, 2000);
+          } else {
+            showError(data.message || 'Invalid verification code');
+          }
+        } catch (error) {
+          showError('Network error. Please try again later.');
+        }
+      });
+    }
+    
+    // Resend OTP button click
+    if (resendBtn) {
+      resendBtn.addEventListener('click', async function() {
+        if (resendBtn.disabled) return;
+        
+        try {
+          // Replace with your actual API endpoint
+          const response = await fetch('/api/auth/request-otp', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              email: currentEmail,
+              purpose: 'register'
+            }),
+          });
+          
+          const data = await response.json();
+          
+          if (data.success) {
+            showSuccess('Verification code resent successfully');
+            startResendCountdown();
+          } else {
+            showError(data.message || 'Failed to resend code');
+          }
+        } catch (error) {
+          showError('Network error. Please try again later.');
+        }
+      });
+    }
+    
+    // Go back button click
+    if (backBtn) {
+      backBtn.addEventListener('click', function() {
+        otpContainer.style.display = 'none';
+        signupForm.parentElement.style.display = 'block';
+        clearResendCountdown();
+      });
+    }
+    
+    // Countdown timer for resend button
+    function startResendCountdown() {
+      clearResendCountdown();
+      let seconds = 30;
+      countdownSpan.textContent = seconds;
+      resendBtn.disabled = true;
+      
+      countdownTimer = setInterval(() => {
+        seconds--;
+        countdownSpan.textContent = seconds;
+        
+        if (seconds <= 0) {
+          clearResendCountdown();
+          resendBtn.textContent = 'Resend code';
+          resendBtn.disabled = false;
+        }
+      }, 1000);
+    }
+    
+    function clearResendCountdown() {
+      if (countdownTimer) clearInterval(countdownTimer);
+      resendBtn.disabled = false;
+    }
+    
+    function showError(message) {
+      const errorElement = document.getElementById('error-message') || document.createElement('div');
+      errorElement.textContent = message;
+      errorElement.style.display = 'block';
+      
+      // Hide after 5 seconds
+      setTimeout(() => {
+        errorElement.style.display = 'none';
+      }, 5000);
+    }
+    
+    function showSuccess(message) {
+      const successElement = document.getElementById('success-message') || document.createElement('div');
+      successElement.textContent = message;
+      successElement.style.display = 'block';
+      
+      // Hide after 5 seconds
+      setTimeout(() => {
+        successElement.style.display = 'none';
+      }, 5000);
+    }
+  });
+</script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/mixitup.js"></script>
+<script src="js/touchspin.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/custom-script.js"></script>
+<!-- <script src="js/booking.js"></script> -->
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Gateway</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+        }
+        
+        .payment-box {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 28px;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            font-size: 16px;
+        }
+        
+        .amount-section {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .amount-section h2 {
+            font-size: 36px;
+            color: #2c3e50;
+            margin: 10px 0;
+        }
+        
+        .payment-methods {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .payment-method {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .payment-method:hover {
+            border-color: #3498db;
+            background-color: #f0f7ff;
+        }
+        
+        .payment-method.selected {
+            border-color: #3498db;
+            background-color: #eaf5ff;
+        }
+        
+        .payment-icon {
+            width: 60px;
+            margin-right: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .payment-icon img {
+            max-width: 100%;
+            max-height: 30px;
+        }
+        
+        .payment-details {
+            flex-grow: 1;
+        }
+        
+        .payment-name {
+            font-weight: bold;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .payment-description {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        .radio-button {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #bdc3c7;
+            border-radius: 50%;
+            margin-left: 10px;
+            position: relative;
+        }
+        
+        .selected .radio-button {
+            border-color: #3498db;
+        }
+        
+        .selected .radio-button:after {
+            content: '';
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: #3498db;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .card-details {
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .card-details.active {
+            display: block;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .form-row .form-group {
+            flex: 1;
+        }
+        
+        .btn {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 15px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .secured-by {
+            text-align: center;
+            margin-top: 20px;
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="payment-box">
+            <div class="header">
+                <h1>Complete Your Payment</h1>
+                <p>Choose your preferred payment method below</p>
+            </div>
+            
+            <div class="amount-section">
+                <p>Total Amount</p>
+                <h2>$99.99</h2>
+            </div>
+            
+            <div class="payment-methods">
+                <div class="payment-method" onclick="selectPayment('card')">
+                    <div class="payment-icon">
+                        <img src="/api/placeholder/60/30" alt="Credit Card">
+                    </div>
+                    <div class="payment-details">
+                        <div class="payment-name">Credit/Debit Card</div>
+                        <div class="payment-description">Pay securely with Visa, Mastercard, or American Express</div>
+                    </div>
+                    <div class="radio-button" id="card-radio"></div>
+                </div>
+                
+                <div class="payment-method" onclick="selectPayment('paypal')">
+                    <div class="payment-icon">
+                        <img src="/api/placeholder/60/30" alt="PayPal">
+                    </div>
+                    <div class="payment-details">
+                        <div class="payment-name">PayPal</div>
+                        <div class="payment-description">Fast and secure payment with PayPal</div>
+                    </div>
+                    <div class="radio-button" id="paypal-radio"></div>
+                </div>
+                
+                <div class="payment-method" onclick="selectPayment('upi')">
+                    <div class="payment-icon">
+                        <img src="/api/placeholder/60/30" alt="UPI">
+                    </div>
+                    <div class="payment-details">
+                        <div class="payment-name">UPI</div>
+                        <div class="payment-description">Pay using any UPI app like Google Pay, PhonePe, etc.</div>
+                    </div>
+                    <div class="radio-button" id="upi-radio"></div>
+                </div>
+                
+                <div class="payment-method" onclick="selectPayment('razorpay')">
+                    <div class="payment-icon">
+                        <img src="/api/placeholder/60/30" alt="RazorPay">
+                    </div>
+                    <div class="payment-details">
+                        <div class="payment-name">RazorPay</div>
+                        <div class="payment-description">Quick and secure payment with RazorPay</div>
+                    </div>
+                    <div class="radio-button" id="razorpay-radio"></div>
+                </div>
+            </div>
+            
+            <div class="card-details" id="card-details">
+                <div class="form-group">
+                    <label for="card-number">Card Number</label>
+                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                </div>
+                
+                <div class="form-group">
+                    <label for="card-name">Cardholder Name</label>
+                    <input type="text" id="card-name" placeholder="John Doe">
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="expiry-date">Expiry Date</label>
+                        <input type="text" id="expiry-date" placeholder="MM/YY">
+                    </div>
+                    <div class="form-group">
+                        <label for="cvv">CVV</label>
+                        <input type="text" id="cvv" placeholder="123">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-details" id="paypal-details">
+                <p>You will be redirected to PayPal to complete your payment.</p>
+            </div>
+            
+            <div class="card-details" id="upi-details">
+                <div class="form-group">
+                    <label for="upi-id">UPI ID</label>
+                    <input type="text" id="upi-id" placeholder="name@upi">
+                </div>
+            </div>
+            
+            <div class="card-details" id="razorpay-details">
+                <p>You will be redirected to RazorPay to complete your payment.</p>
+            </div>
+            
+            <button class="btn" onclick="processPayment()">Pay Now</button>
+            
+            <div class="secured-by">
+                <p>🔒 Secured by SSL Encryption</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function selectPayment(method) {
+            // Clear all selections first
+            document.querySelectorAll('.payment-method').forEach(el => {
+                el.classList.remove('selected');
+            });
+            
+            document.querySelectorAll('.card-details').forEach(el => {
+                el.classList.remove('active');
+            });
+            
+            // Select the chosen method
+            document.querySelector(`.payment-method[onclick="selectPayment('${method}')"]`).classList.add('selected');
+            document.getElementById(`${method}-details`).classList.add('active');
+        }
+        
+        function processPayment() {
+            alert('This is a non-functional payment gateway demonstration. In a real application, this would process your payment.');
+        }
+        
+        // Set default payment method to card
+        selectPayment('card');
+    </script>
+</body>
+</html>
