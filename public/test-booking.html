@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking System Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+        .form-section, .results-section {
+            flex: 1;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        input, select, button {
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            padding: 10px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .actions button {
+            margin-right: 5px;
+            padding: 5px 10px;
+            font-size: 12px;
+        }
+        .btn-confirm { background-color: #4CAF50; }
+        .btn-cancel { background-color: #f44336; }
+        .btn-delete { background-color: #555; }
+        .status-pending { color: orange; font-weight: bold; }
+        .status-confirmed { color: green; font-weight: bold; }
+        .status-cancelled { color: red; font-weight: bold; }
+        .links {
+            margin-top: 20px;
+            display: flex;
+            justify-content: space-between;
+        }
+        .links a {
+            display: inline-block;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Booking System Test</h1>
+    
+    <div class="container">
+        <div class="form-section">
+            <h2>Test Booking Form</h2>
+            <form id="bookingForm">
+                <input type="text" name="user_name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="tel" name="mobile_number" placeholder="Phone Number" required>
+                <input type="date" name="travel_date" required>
+                <input type="number" class="prod_qty" name="product" value="2" min="1" max="10">
+                <select name="destination" required>
+                    <option value="">Select Destination</option>
+                    <option value="Himalaya">Himalaya</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Shimla">Shimla</option>
+                    <option value="Darjeeling">Darjeeling</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Jaipur">Jaipur</option>
+                    <option value="Andaman & Nicobar">Andaman & Nicobar</option>
+                    <option value="Agra">Agra</option>
+                    <option value="Assam">Assam</option>
+                </select>
+                <select name="tour-type" required>
+                    <option value="">Select Tour Type</option>
+                    <option value="Standard Tour">Standard Tour</option>
+                    <option value="Premium Tour">Premium Tour</option>
+                    <option value="Adventure Tour">Adventure Tour</option>
+                </select>
+                <button type="submit">Book Now</button>
+            </form>
+        </div>
+        
+        <div class="results-section">
+            <h2>Bookings</h2>
+            <div id="bookings-container"></div>
+        </div>
+    </div>
+    
+    <div class="links">
+        <a href="admin-bookings.html">Go to Admin Dashboard</a>
+    </div>
+
+    <script>
+        // Simple version of bookings-manager.js functions
+        if (!localStorage.getItem('trekerBookings')) {
+            localStorage.setItem('trekerBookings', JSON.stringify([]));
+        }
+
+        function generateBookingId() {
+            return 'TRK-' + Date.now().toString().slice(-6) + '-' + Math.floor(Math.random() * 1000);
+        }
+
+        function saveBooking(bookingData) {
+            const bookings = JSON.parse(localStorage.getItem('trekerBookings')) || [];
+            bookings.push(bookingData);
+            localStorage.setItem('trekerBookings', JSON.stringify(bookings));
+            console.log('Booking saved:', bookingData);
+        }
+
+        function getAllBookings() {
+            return JSON.parse(localStorage.getItem('trekerBookings')) || [];
+        }
+
+        function handleBookingSubmission(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            const formData = {
+                id: generateBookingId(),
+                username: form.querySelector('[name="user_name"]').value,
+                email: form.querySelector('[name="email"]').value,
+                phone: form.querySelector('[name="mobile_number"]').value,
+                travelers: form.querySelector('.prod_qty').value,
+                date: form.querySelector('[name="travel_date"]').value,
+                destination: form.querySelector('[name="destination"]').value,
+                tourType: form.querySelector('[name="tour-type"]').value,
+                bookingDate: new Date().toISOString(),
+                status: 'Pending'
+            };
+
+            saveBooking(formData);
+            
+            alert('Booking successful! Reference ID: ' + formData.id);
+            
+            form.reset();
+            renderBookings();
+        }
+
+        function renderBookings() {
+            const bookings = getAllBookings();
+            const container = document.getElementById('bookings-container');
+            
+            if (!bookings || bookings.length === 0) {
+                container.innerHTML = '<p>No bookings found.</p>';
+                return;
+            }
+            
+            let tableHTML = `
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Destination</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+            `;
+            
+            bookings.forEach(booking => {
+                const travelDate = new Date(booking.date).toLocaleDateString();
+                
+                tableHTML += `
+                    <tr>
+                        <td>${booking.id}</td>
+                        <td>${booking.username}</td>
+                        <td>${booking.destination}</td>
+                        <td>${travelDate}</td>
+                        <td class="status-${booking.status.toLowerCase()}">${booking.status}</td>
+                    </tr>
+                `;
+            });
+            
+            tableHTML += `
+                    </tbody>
+                </table>
+            `;
+            
+            container.innerHTML = tableHTML;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const bookingForm = document.getElementById('bookingForm');
+            if (bookingForm) {
+                bookingForm.addEventListener('submit', handleBookingSubmission);
+            }
+            
+            renderBookings();
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Treker - Check Out</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link href="css/responsive.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]--> 
+
+</head>
+
+<body>
+  <div class="page-wrapper"> 
+  
+    <!-- Preloader -->
+    <div class="preloader"></div> 
+    <div class="search-backdrop"></div>
+    <!-- Main Header-->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="auto-container">
+                <div class="inner clearfix">
+                    <div class="top-left clearfix">
+                        <ul class="info clearfix">
+                            <li><i class="icon fa fa-envelope"></i> <a href="mailto:INFO@TREKER.COM">INFO@TREKER.COM</a></li>
+                            <li><i class="icon fa fa-phone-circle"></i> <a href="tel:+11256326501">+91 123 456789</a></li>
+                        </ul>
+                    </div>
+                    <div class="top-right clearfix">
+                        <!-- <div class="lang-box">
+                            <div class="lang-btn clearfix"><span class="img far fa-globe-americas"></span><span class="txt">Eng</span><span class="icon far fa-angle-down"></span></div>
+                            <ul class="lang-list">
+                                <li><a href="#">Tur</a></li>
+                                <li><a href="#">Esp</a></li>
+                                <li><a href="#">Rus</a></li>
+                            </ul>
+                        </div> -->
+                        <div class="login"><i class="icon fa fa-user"></i> 
+                            <div id="userSection" style="display: none;">
+                                <span id="username"></span>&emsp;&emsp;
+                                <button style="background-color: #1DC5CE; color: #fff;"><a id="logoutBtn">Logout</a></button>
+                            </div>
+                            <a id="loginBtn" href="login.html">SIGN IN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Upper -->
+        <div class="header-upper">        
+            <div class="auto-container">
+                <!-- Main Box -->
+                <div class="main-box clearfix">
+                    <!--Logo-->
+                    <div class="logo-box">
+                         <div class="logo"><a href="index.html" title="Treker"><img src="images/logo.svg" alt="" title="Treker"></a></div>
+                    </div>
+
+                    <div class="nav-box clearfix">
+                        <!--Nav Outer-->
+                        <div class="nav-outer clearfix">         
+                            <nav class="main-menu">
+                                <ul class="navigation clearfix">
+                                    <li><a href="index.html">Home</a>
+                                        <!-- <ul>
+                                            <li><a href="index.html">Home 01</a></li>
+                                            <li><a href="index-2.html">Home 02</a></li>
+                                        </ul> -->
+                                    </li>
+                                    <!-- <li class="dropdown"><a href="about.html">About Us</a>
+                                        <ul>
+                                            <li><a href="team.html">Our Team</a></li>
+                                            <li><a href="team-member.html">Team Member</a></li>
+                                            <li><a href="faq.html">FAQs</a></li>
+                                            <li><a href="gallery.html">Gallery</a></li>
+                                        </ul>
+                                    </li> -->
+                                  
+                                    <li><a href="destinations.html">Destinations</a></li>
+                                   
+                                   <!-- <li class="dropdown"><a href="#">Explore</a>
+                                        <ul>
+                                            <li><a href="himalaya.html">Himalaya</a></li>
+                                            <li><a href="mumbai.html">Mumbai</a></li>
+                                            <li><a href="shimla.html">Shimla</a></li>
+                                            <li><a href="darjeeling.html">Darjeeling</a></li>
+                                            <li><a href="goa.html">Goa</a></li>
+                                            <li><a href="jaipur.html">Jaipur</a></li>
+                                            <li><a href="andaman-nicobar.html">Andaman & Nicobar Islands</a></li>
+                                            <li><a href="agra.html">Agra</a></li>
+                                            <li><a href="assam.html">Assam</a></li>
+                                        </ul>
+                                    </li> -->
+                                    
+                                    <!-- <li class="dropdown"><a href="blogs.html">Blogs</a></li> -->
+                                    <li><a href="signup.html">Sign Up</a></li>
+                                      
+                                    </li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <!-- Main Menu End-->
+                        </div>
+                        <!--Nav Outer End-->
+
+                        <div class="links-box clearfix">
+                            <div class="link search-btn search-toggle"><span class="icon far fa-search"></span></div>
+                            <!-- <div class="link fav-btn"><a href="#"><span class="icon far fa-heart"></span><span class="count">02</span></a></div>
+                            <div class="link cart-btn"><a href="#" class="clearfix"><div class="cart-info"><span class="icon far fa-shopping-cart"></span>00 Items</div><div class="amount">$ 00:00</div></a></div> -->
+                        </div>
+
+                        <!-- Hidden Nav Toggler -->
+                        <div class="nav-toggler">
+                            <button class="hidden-bar-opener"><span class="icon"><img src="images/icons/menu-icon.svg" alt=""></span></button>
+                        </div>
+
+                    </div>
+
+                    <!-- End Header Upper -->
+                    <div class="search-box">
+                        <div class="outer-container">
+                            <div class="inner-box">
+                                <div class="form-box">
+                                    <div class="s-close-btn"><span class="icon far fa-times"></span></div>
+                                    <span class="s-icon fa fa-search"></span>
+                                    <form method="post" action="index.html">
+                                        <div class="form-group">
+                                            <input type="search" name="search" value="" placeholder="Search Here" required="">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--End Main Header -->
+
+    <!--Search Backdrop-->
+    <div class="search-backdrop"></div>
+
+    
+    <!--Menu Backdrop-->
+    <div class="menu-backdrop"></div>
+
+    <!-- Hidden Navigation Bar -->
+    <section class="hidden-bar">
+        <!-- Hidden Bar Wrapper -->
+        <div class="hidden-bar-wrapper">
+            <div class="hidden-bar-closer"><span class="icon"><svg class="icon-close" role="presentation" viewBox="0 0 16 14"><path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path></svg></span></div>
+            <div class="nav-logo-box">
+                <div class="logo"><a href="index.html" title="Treker"><img src="images/logo.svg" alt="" title="Treker"></a></div>
+            </div>
+            <!-- .Side-menu -->
+            <div class="side-menu">
+                 <ul class="navigation clearfix">
+                    <li class="dropdown"><a href="index.html">Home</a>
+                        <ul>
+                            <li><a href="index.html">Home 01</a></li>
+                            <li><a href="index-2.html">Home 02</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="about.html">About Us</a>
+                        <ul>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="team-member.html">Team Member</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="current dropdown"><a href="shop.html">Shop</a>
+                        <ul>
+                            <li><a href="shop.html">Our Shop</a></li>
+                            <li><a href="product-single.html">Product Details</a></li>
+                            <li><a href="wishlist.html">My Wishlist</a></li>
+                            <li><a href="shopping-cart.html">Shopping Cart</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                            <li><a href="signup.html">Signup</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="reset-password.html">Forgot Password</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                   
+                 <li class="dropdown"><a href="#">Explore</a>
+                                        <ul>
+                                            <li><a href="himalaya.html">Himalaya</a></li>
+                                            <li><a href="mumbai.html">Mumbai</a></li>
+                                            <li><a href="shimla.html">Shimla</a></li>
+                                            <li><a href="darjeeling.html">Darjeeling</a></li>
+                                            <li><a href="goa.html">Goa</a></li>
+                                            <li><a href="jaipur.html">Jaipur</a></li>
+                                            <li><a href="andaman-nicobar.html">Andaman & Nicobar Islands</a></li>
+                                            <li><a href="agra.html">Agra</a></li>
+                                            <li><a href="assam.html">Assam</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                   <li class="dropdown"><a href="blog.html">Blogs</a>
+                                        <ul>
+                                          
+                                            <li><a href="blog-single.html">Blog Details</a></li>
+                                        </ul>
+                                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div><!-- /.Side-menu -->
+            
+            <div class="links-box clearfix">
+                <div class="clearfix">
+                    <div class="link"><a href="login.html" class="theme-btn btn-style-one"><span>Login<i class="icon far fa-angle-right"></i></span></a></div>
+                    <div class="link"><a href="signup.html" class="theme-btn btn-style-two"><span>Sign Up<i class="icon far fa-angle-right"></i></span></a></div>
+                </div>
+            </div>
+        
+        </div><!-- / Hidden Bar Wrapper -->
+    </section>
+    <!-- / Hidden Bar -->
+
+    <div class="cart-backdrop"></div>
+    <!--Cart Sidebar-->
+    <div class="cart-sidebar">
+        <div class="cart-side-inner">
+            <div class="cart-side-header">
+                <div class="closer-btn"><span>Close</span></div>
+                <h5>Shopping Cart</h5>
+            </div>
+            <div class="prod-box">
+                <div class="prod-block">
+                    <div class="prod-inner">
+                        <div class="prod-thumb"><a href="#"><img src="images/resource/shop/shop-thumb-1.jpg" alt=""></a></div>
+                        <div class="remove-item"><a href="#"><i class="far fa-times"></i></a></div>
+                        <div class="prod-title"><a href="#">Smart Air Bag Travel</a></div>
+                        <div class="quantity-box">
+                            <div class="item-quantity">
+                                <input class="qty-spinner" type="text" value="1" name="quantity">
+                            </div>
+                        </div>
+                        <div class="calculations">1 x <span>$225.00</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lower-content">
+            <div class="count clearfix">
+                <span class="ttl">Subtotal</span>
+                <span class="dtl">$225.00</span>
+            </div>
+            <div class="links clearfix">
+                <div class="left"><a href="#" class="theme-btn btn-style-one"><span>View Cart</span></a></div>
+                <div class="right"><a href="#" class="theme-btn btn-style-two"><span>Checkout</span></a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner Section -->
+    <section class="inner-banner">
+        <div class="image-layer" style="background-image: url(images/background/f-bottom-bg.svg);"></div>
+        <div class="auto-container">
+            <div class="content-box">
+                <h2>Check Out</h2>
+                <div class="bread-crumb">
+                    <ul class="clearfix">
+                        <li><span class="icon-home fa fa-home"></span><a href="index.html">Home</a></li>
+                        <li class="current">Check Out</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Banner Section -->
+
+    <!--CheckOut Page-->
+    <section class="checkout-page">
+        <div class="auto-container">
+            <ul class="default-links"> 
+                <!-- <li class="have-coupon with-border"><i class="icon"><img src="images/icons/coupon-icon.svg" alt=""></i> Have a coupon? <a href="#">Click here</a> to enter your code</li> -->
+                <li>
+                    <div class="coupon-form site-form">
+                        <form name="coupon-form" method="post" action="checkout.html">
+                            <div class="c-label">If you have a coupon, please apply it below.</div>
+                            <div class="form-group clearfix">
+                                <input type="text" name="coupon-code" value="" placeholder="Coupon code" required>
+                                <button type="submit" class="theme-btn coupon-btn btn-style-two"><span class="btn-title">Apply coupon</span></button>
+                            </div>
+                        </form>
+                    </div>
+                </li>
+            </ul> 
+            <!--Checkout Details-->
+            <div class="site-form">
+                
+                <div class="billing-detail">
+                    
+                    <div class="row clearfix">
+                        <div class="billing-column col-lg-6 col-md-12 col-sm-12">
+                            <div class="">
+                                <h3 class="checkout-title">Your Booking Summary</h3>
+                                <ul id="bookingSummary" class="list-group mb-4"></ul>
+                              
+                                <button id="payNowBtn" class="btn btn-success">Proceed to Payment</button>
+                              </div>                              
+                            <!-- <form method="post" action="checkout.html">
+                                <div class="billing-form">
+                                    <h4 class="checkout-title">Billing details</h4>
+                                    <div class="row clearfix">
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <div class="f-label">First Name <i>*</i></div>
+                                            <div class="field-inner">
+                                                <input type="text" name="field-name" value="" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <div class="f-label">Last Name <i>*</i></div>
+                                            <div class="field-inner">
+                                                <input type="text" name="field-name" value="" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <div class="f-label">Company name (optional)</div>
+                                            <div class="field-inner">
+                                                <input type="text" name="field-name" value="" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <div class="f-label">Country / Region <i>*</i></div>
+                                            <div class="field-inner">
+                                                 <select>
+                                                    <option>USA</option>
+                                                    <option>China</option>
+                                                    <option>Russia</option>
+                                                    <option>UK</option>
+                                                    <option>France</option>
+                                                    <option>Germany</option>
+                                                </select>
+                                                <span class="alt-icon far fa-angle-down"></span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <div class="f-label">Street address <i>*</i></div>
+                                            <div class="field-inner">
+                                                <input type="text" name="field-name" value="" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <div class="f-label">Town / City <i>*</i></div>
+                                            <div class="field-inner">
+                                                <input type="text" name="field-name" value="" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <div class="f-label">Postcode / ZIP (optional)</div>
+                                            <div class="field-inner">
+                                                <input type="text" name="field-name" value="" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <div class="f-label">Phone <i>*</i></div>
+                                            <div class="field-inner">
+                                                <input type="text" name="field-name" value="" placeholder="">
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <div class="f-label">Email <i>*</i></div>
+                                            <div class="field-inner">
+                                                <input type="email" name="field-name" value="" placeholder="">
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="billing-form">
+                                    <h4 class="checkout-title">Billing details</h4>
+                                    <div class="row clearfix">
+                                        <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                            <div class="f-label">If you have a coupon, please apply it below.</div>
+                                            <div class="field-inner">
+                                                <textarea name="field-name" placeholder=""></textarea>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </form> -->
+                        </div>
+                        <!-- <div class="order-column col-lg-6 col-md-12 col-sm-12">
+                            <div class="order-box">
+                                <h4 class="checkout-title">Your Order</h4>
+                                <div class="order-summary">
+                                    <ul>
+                                        <li class="sum-head clearfix"><span class="ttl">Product</span> <span class="dtl">Subtotal</span></li>
+                                        <li class="prod clearfix"><span class="ttl">Smart Air Bag Travel</span> <span class="dtl">$225.00</span></li>
+                                        <li class="sub-total clearfix"><span class="ttl">Subtotal</span> <span class="dtl">$225.00</span></li>
+                                        <li class="g-total clearfix"><span class="ttl">Total</span> <span class="dtl">$225.00</span></li>
+                                    </ul>
+                                </div>
+                                <div class="payment-options">
+                                    <ul>
+                                        <li>
+                                            <div class="radio-option">
+                                                <input type="radio" name="payment-group" id="payment-1" checked>
+                                                <label for="payment-1"><strong>Check payment</strong></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="radio-option">
+                                                <input type="radio" name="payment-group" id="payment-2" checked>
+                                                <label for="payment-2"><strong>Cash on delivery</strong></label>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="radio-option">
+                                                <input type="radio" name="payment-group" id="payment-3">
+                                                <label for="payment-3"><strong>Paypal</strong></label>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <div class="agreement">
+                                        <input type="checkbox" name="agree" id="agree">
+                                        <label for="agree">I agree with this <a href="terms-conditions.html">teams and condition</a> *</label>
+                                    </div>
+                                    <div class="btn-box">
+                                        <button type="button" class="theme-btn btn-style-two"><span>Place Order</span></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                            
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Checkout Page -->
+
+    <!--Main Footer-->
+    <footer class="main-footer">
+        <div class="bg-layer" style="background-image: url(images/background/f-bottom-bg.svg);"></div>
+        <div class="floated-icon"><img src="images/resource/footer-stones.svg" alt="" title=""></div>
+        <div class="info-section">
+            <div class="auto-container">
+
+                <div class="row clearfix">
+
+                    <div class="footer-column col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                        <!--Logo-->
+                        <div class="footer-logo">
+                            <div class="logo"><a href="index.html" title="Treker"><img src="images/logo.svg" alt="" title="Treker"></a></div>
+                        </div>
+                        <div class="footer-text">Treker was founded in 2025 by a group of safety-focused professionals who created The Wingman Standard for rigorously vetting air charter operators.</div>
+                    </div>
+
+                    <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+
+                            <div class="info-block col-lg-4 col-md-4 col-sm-12">
+                                <h6>EUROPE</h6>
+                                <div class="info">
+                                    <ul>
+                                        <li>Europe 45 Gloucester Road London DT1M 3BF</li>
+                                        <li><a href="tel:+44(0)2036715709">+44 (0)20 3671 5709</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="info-block col-lg-4 col-md-4 col-sm-12">
+                                <h6>ASIA & PACIFIC</h6>
+                                <div class="info">
+                                    <ul>
+                                        <li>2473 Red Road Ste 98 Mumbai MUM</li>
+                                        <li><a href="tel:+16232116319">+ 91 623 211 6319</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="info-block col-lg-4 col-md-4 col-sm-12">
+                                <h6>NORTH AMERICA</h6>
+                                <div class="info">
+                                    <ul>
+                                        <li>Europe 45 Gloucester Road London DT1M 3BF</li>
+                                        <li><a href="tel:+44(0)2036715709">+44 (0)20 3671 5709</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lower-section">
+            <div class="auto-container">
+                <div class="content-box">
+                    <div class="row clearfix">
+
+                        <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
+                            <div class="row clearfix">
+
+                                <div class="footer-column col-lg-4 col-md-4 col-sm-12">
+                                    <h6>About us</h6>
+                                    <div class="links">
+                                        <ul>
+                                            <li><a href="#">About Us</a></li>
+                                            <li><a href="#">Community Blog</a></li>
+                                            <li><a href="#">Rewards</a></li>
+                                            <li><a href="#">Work with Us</a></li>
+                                            <li><a href="#">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="footer-column col-lg-4 col-md-4 col-sm-12">
+                                    <h6>Exlopre Treker</h6>
+                                    <div class="links">
+                                        <ul>
+                                            <li><a href="#">Account</a></li>
+                                            <li><a href="#">Privacy Policy</a></li>
+                                            <li><a href="#">Affilitate</a></li><li><a href="#">Program</a></li>
+                                            <li><a href="#">Our Partner</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="footer-column col-lg-4 col-md-4 col-sm-12">
+                                    <h6>Quick lInks</h6>
+                                    <div class="links">
+                                        <ul>
+                                            <li><a href="#">About us</a></li>
+                                            <li><a href="#">News & press</a></li>
+                                            <li><a href="#">Blog</a></li>
+                                            <li><a href="#">FAQs</a></li>
+                                            <li><a href="#">Careers</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="f-bottom">
+            <div class="auto-container">
+                <div class="inner clearfix">
+                    <div class="social-links">
+                        <ul class="clearfix">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="copyright">Copyright &copy; 2025 Treker. All Rights Reserved. Design with &hearts;</div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+</div>
+<!--End pagewrapper--> 
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon"><img src="images/icons/arrow-up.svg" alt="" title="Go To Top"></span></div>
+
+<script src="js/jquery.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/touchspin.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/custom-script.js"></script>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+  const bookingData = JSON.parse(localStorage.getItem('bookingData'));
+
+  if (!bookingData) {
+    Swal.fire({
+      icon: 'error',
+      title: 'No Booking Found',
+      text: 'Please go back and complete the booking form first.',
+      confirmButtonText: 'Go to Booking Page'
+    }).then(() => {
+      window.location.href = 'packages.html';
+    });
+  } else {
+    const summaryList = document.getElementById('bookingSummary');
+
+    const summaryItems = [
+      { label: "Full Name", value: bookingData.username },
+      { label: "Email", value: bookingData.email },
+      { label: "Phone", value: bookingData.phone },
+      { label: "Date of Trek", value: bookingData.date },
+      { label: "Guests", value: bookingData.guests },
+      { label: "Trek Name", value: bookingData.trekName }
+    ];
+
+    summaryItems.forEach(item => {
+      const li = document.createElement('li');
+      li.className = 'list-group-item';
+      li.innerHTML = `<strong>${item.label}:</strong> ${item.value}`;
+      summaryList.appendChild(li);
+    });
+
+    // Razorpay payment trigger
+    document.getElementById('payNowBtn').addEventListener('click', async () => {
+      Swal.fire({
+        icon: 'info',
+        title: 'Redirecting to Razorpay...',
+        showConfirmButton: false,
+        timer: 1000
+      });
+
+      // Example: ₹1000 per guest
+      const amount = bookingData.guests * 1000;
+      let razorpayKey;
+
+        async function getRazorpayKey() {
+        const res = await fetch('/api/get-razorpay-key');
+        const data = await res.json();
+        razorpayKey = data.key;
+        }
+
+        await getRazorpayKey();
+
+      try {
+        // Step 1: Create Razorpay Order from server
+        const res = await fetch('/api/pay', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ amount })
+        });
+
+        const data = await res.json();
+        if (!data.success) {
+          return Swal.fire('Error', 'Failed to initiate payment', 'error');
+        }
+
+        // Step 2: Razorpay Checkout
+        const options = {
+          key: razorpayKey,
+          amount: data.order.amount,
+          currency: 'INR',
+          name: 'Trek Booking',
+          description: `Booking for ${bookingData.trekName}`,
+          order_id: data.order.id,
+          handler: async function (response) {
+            // Step 3: On payment success, store booking in DB
+            bookingData.paymentId = response.razorpay_payment_id;
+
+            const saveRes = await fetch('/api/bookings/create', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(bookingData)
+            });
+
+            const saveData = await saveRes.json();
+            if (saveData.success) {
+              Swal.fire('Success', 'Your booking is confirmed!', 'success').then(() => {
+                localStorage.removeItem('bookingData');
+                window.location.href = 'index.html';
+              });
+            } else {
+              Swal.fire('Error', saveData.msg || 'Booking failed', 'error');
+            }
+          },
+          prefill: {
+            name: bookingData.username,
+            email: bookingData.email,
+            contact: bookingData.phone
+          },
+          theme: {
+            color: '#00a86b'
+          }
+        };
+
+        const rzp = new Razorpay(options);
+        rzp.open();
+
+      } catch (error) {
+        console.error('Payment Error:', error);
+        Swal.fire('Error', 'Something went wrong during payment', 'error');
+      }
+    });
+  }
+</script>
+
+
+</body>
+</html>

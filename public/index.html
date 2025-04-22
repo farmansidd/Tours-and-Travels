@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Treker - Welcome!</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link href="css/responsive.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+
+</head>
+
+<body>
+  <div class="page-wrapper"> 
+  
+    <!-- Preloader -->
+    <div class="preloader"></div> 
+	
+    <div class="search-backdrop"></div>
+	
+    <!-- Main Header-->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="auto-container">
+                <div class="inner clearfix">
+                    <div class="top-left clearfix">
+                        <ul class="info clearfix">
+                            <li><i class="icon fa fa-envelope"></i> <a href="mailto:INFO@TREKER.COM">INFO@TREKER.COM</a></li>
+                            <li><i class="icon fa fa-phone-circle"></i> <a href="tel:+11256326501">+91 123 456789</a></li>
+                        </ul>
+                    </div>
+                    <div class="top-right clearfix">
+                        <!-- <div class="lang-box">
+                            <div class="lang-btn clearfix"><span class="img far fa-globe-americas"></span><span class="txt">Eng</span><span class="icon far fa-angle-down"></span></div>
+                            <ul class="lang-list">
+                                <li><a href="#">Tur</a></li>
+                                <li><a href="#">Esp</a></li>
+                                <li><a href="#">Rus</a></li>
+                            </ul>
+                        </div> -->
+                        <div class="login"><i class="icon fa fa-user"></i> 
+                            <div id="userSection" style="display: none;">
+                                <span id="username"></span>&emsp;&emsp;
+                                <button style="background-color: #1DC5CE; color: #fff;"><a id="logoutBtn">Logout</a></button>
+                            </div>
+                            <a id="loginBtn" href="login.html">SIGN IN</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Upper -->
+        <div class="header-upper">        
+            <div class="auto-container">
+                <!-- Main Box -->
+                <div class="main-box clearfix">
+                    <!--Logo-->
+                    <div class="logo-box">
+                         <div class="logo"><a href="index.html" title="Treker"><img src="images/logo.svg" alt="" title="Treker"></a></div>
+                    </div>
+
+                    <div class="nav-box clearfix">
+                        <!--Nav Outer-->
+                        <div class="nav-outer clearfix">         
+                            <nav class="main-menu">
+                                <ul class="navigation clearfix">
+                                    <li class="current dropdown"><a href="index.html">Home</a>
+                                        <!-- <ul>
+                                            <li><a href="index.html">Home 01</a></li>
+                                            <li><a href="index-2.html">Home 02</a></li>
+                                        </ul> -->
+                                    </li>
+                                    <!-- <li class="dropdown"><a href="about.html">About Us</a>
+                                        <ul>
+                                            <li><a href="team.html">Our Team</a></li>
+                                            <li><a href="team-member.html">Team Member</a></li>
+                                            <li><a href="faq.html">FAQs</a></li>
+                                            <li><a href="gallery.html">Gallery</a></li>
+                                        </ul>
+                                    </li> -->
+                                  
+                                    <li><a href="destinations.html">Destinations</a></li>
+                                   
+                                   <!-- <li class="dropdown"><a href="#">Explore</a>
+                                        <ul>
+                                            <li><a href="himalaya.html">Himalaya</a></li>
+                                            <li><a href="mumbai.html">Mumbai</a></li>
+                                            <li><a href="shimla.html">Shimla</a></li>
+                                            <li><a href="darjeeling.html">Darjeeling</a></li>
+                                            <li><a href="goa.html">Goa</a></li>
+                                            <li><a href="jaipur.html">Jaipur</a></li>
+                                            <li><a href="andaman-nicobar.html">Andaman & Nicobar Islands</a></li>
+                                            <li><a href="agra.html">Agra</a></li>
+                                            <li><a href="assam.html">Assam</a></li>
+                                        </ul>
+                                    </li> -->
+                                    
+                                    <!-- <li class="dropdown"><a href="blogs.html">Blogs</a></li> -->
+                                    <li><a href="signup.html">Sign Up</a></li>
+                                      
+                                    </li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <!-- Main Menu End-->
+                        </div>
+                        <!--Nav Outer End-->
+
+                        <div class="links-box clearfix">
+                            <div class="link search-btn search-toggle"><span class="icon far fa-search"></span></div>
+                            <!-- <div class="link fav-btn"><a href="#"><span class="icon far fa-heart"></span><span class="count">02</span></a></div>
+                            <div class="link cart-btn"><a href="#" class="clearfix"><div class="cart-info"><span class="icon far fa-shopping-cart"></span>00 Items</div><div class="amount">$ 00:00</div></a></div> -->
+                        </div>
+
+                        <!-- Hidden Nav Toggler -->
+                        <div class="nav-toggler">
+                            <button class="hidden-bar-opener"><span class="icon"><img src="images/icons/menu-icon.svg" alt=""></span></button>
+                        </div>
+
+                    </div>
+
+                    <!-- End Header Upper -->
+                    <div class="search-box">
+                        <div class="outer-container">
+                            <div class="inner-box">
+                                <div class="form-box">
+                                    <div class="s-close-btn"><span class="icon far fa-times"></span></div>
+                                    <span class="s-icon fa fa-search"></span>
+                                    <form method="post" action="index.html">
+                                        <div class="form-group">
+                                            <input type="search" name="search" value="" placeholder="Search Here" required="">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--End Main Header -->
+
+    <!--Search Backdrop-->
+    <div class="search-backdrop"></div>
+		
+    <!-- Menu Backdrop -->
+    <div class="menu-backdrop"></div>
+
+    <!-- Hidden Navigation Bar -->
+    <section class="hidden-bar">
+        <!-- Hidden Bar Wrapper -->
+        <div class="hidden-bar-wrapper">
+            <div class="hidden-bar-closer"><span class="icon"><svg class="icon-close" role="presentation" viewBox="0 0 16 14"><path d="M15 0L1 14m14 0L1 0" stroke="currentColor" fill="none" fill-rule="evenodd"></path></svg></span></div>
+            <div class="nav-logo-box">
+                <div class="logo"><a href="index.html" title="Treker"><img src="images/logo.svg" alt="" title="Treker"></a></div>
+            </div>
+            <!-- .Side-menu -->
+            <div class="side-menu">
+                 <ul class="navigation clearfix">
+                    <li class="current dropdown"><a href="index.html">Home</a>
+                        <ul>
+                            <li><a href="index.html">Home 01</a></li>
+                            <li><a href="index-2.html">Home 02</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="about.html">About Us</a>
+                        <ul>
+                            <li><a href="team.html">Our Team</a></li>
+                            <li><a href="team-member.html">Team Member</a></li>
+                            <li><a href="faq.html">FAQs</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"><a href="shop.html">Shop</a>
+                        <ul>
+                            <li><a href="shop.html">Our Shop</a></li>
+                            <li><a href="product-single.html">Product Details</a></li>
+                            <li><a href="wishlist.html">My Wishlist</a></li>
+                            <li><a href="shopping-cart.html">Shopping Cart</a></li>
+                            <li><a href="checkout.html">Checkout</a></li>
+                            <li><a href="signup.html">Signup</a></li>
+                            <li><a href="login.html">Login</a></li>
+                            <li><a href="reset-password.html">Forgot Password</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="destinations.html">Destinations</a></li>
+                   
+                 <li class="dropdown"><a href="#">Explore</a>
+                                        <ul>
+                                            <li><a href="himalaya.html">Himalaya</a></li>
+                                            <li><a href="mumbai.html">Mumbai</a></li>
+                                            <li><a href="shimla.html">Shimla</a></li>
+                                            <li><a href="darjeeling.html">Darjeeling</a></li>
+                                            <li><a href="goa.html">Goa</a></li>
+                                            <li><a href="jaipur.html">Jaipur</a></li>
+                                            <li><a href="andaman-nicobar.html">Andaman & Nicobar Islands</a></li>
+                                            <li><a href="agra.html">Agra</a></li>
+                                            <li><a href="assam.html">Assam</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                   <li class="dropdown"><a href="blog.html">Blogs</a>
+                                        <ul>
+                                          
+                                            <li><a href="blog-single.html">Blog Details</a></li>
+                                        </ul>
+                                    </li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div><!-- /.Side-menu -->
+            
+            <div class="links-box clearfix">
+                <div class="clearfix">
+                    <div class="link"><a href="login.html" class="theme-btn btn-style-one"><span>Login<i class="icon far fa-angle-right"></i></span></a></div>
+                    <div class="link"><a href="signup.html" class="theme-btn btn-style-two"><span>Sign Up<i class="icon far fa-angle-right"></i></span></a></div>
+                </div>
+            </div>
+        
+        </div><!-- / Hidden Bar Wrapper -->
+    </section>
+    <!-- / Hidden Bar -->
+
+	<div class="cart-backdrop"></div>
+	
+    <!--Cart Sidebar-->
+    <div class="cart-sidebar">
+        <div class="cart-side-inner">
+            <div class="cart-side-header">
+                <div class="closer-btn"><span>Close</span></div>
+                <h5>Shopping Cart</h5>
+            </div>
+            <div class="prod-box">
+                <div class="prod-block">
+                    <div class="prod-inner">
+                        <div class="prod-thumb"><a href="#"><img src="images/resource/shop/shop-thumb-1.jpg" alt=""></a></div>
+                        <div class="remove-item"><a href="#"><i class="far fa-times"></i></a></div>
+                        <div class="prod-title"><a href="#">Smart Air Bag Travel</a></div>
+                        <div class="quantity-box">
+                            <div class="item-quantity">
+                                <input class="qty-spinner" type="text" value="1" name="quantity">
+                            </div>
+                        </div>
+                        <div class="calculations">1 x <span>$225.00</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lower-content">
+            <div class="count clearfix">
+                <span class="ttl">Subtotal</span>
+                <span class="dtl">$225.00</span>
+            </div>
+            <div class="links clearfix">
+                <div class="left"><a href="#" class="theme-btn btn-style-one"><span>View Cart</span></a></div>
+                <div class="right"><a href="#" class="theme-btn btn-style-two"><span>Checkout</span></a></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Banner Section -->
+    <section class="banner-section">
+        
+        <div class="banner-container">
+            <div class="banner-slider-box">
+                <!--Slide Item-->
+                <div class="slide-item">
+                    <div class="auto-container">
+                      <div class="content-box">
+                            <div class="content">
+                                <div class="clearfix">
+                                    <div class="inner">
+                                        <div class="bg-image"><img src="images/main-slider/banner-bg-text.svg" alt="" title=""></div>
+                                        <h2>Never Stop</h2>
+                                        <h1><span>Exploring</span></h1>
+                                        <div class="text">Their house is a museum where people come to see ‘em. They really are a scream the Addams Family. These days are all Happy and Free. These days are all share them with me oh baby.</div>
+                                        <div class="links-box clearfix">
+                                            <div class="link"><a href="#" class="theme-btn btn-style-one"><span>View All Tours<i class="icon"><img src="images/icons/logo-icon.svg" alt="" title=""></i></span></a></div>
+                                            <div class="link">
+                                                <a href="https://www.youtube.com/embed/7Z6P92LJgBU?si=AqN9WsTvcva0lcu6&amp;controls=0" class="theme-btn lightbox-image"><i class="ripple"></i><span class="icon"><img src="images/icons/video-icon-1.svg" alt="" title=""></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                            <div class="banner-image">
+                                <div class="image"><img src="images/main-slider/banner-image-1.svg" alt="" title=""></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!--End Banner Section -->
+
+    <!--About Us Section-->
+    <section class="about-us">
+        <div class="floated-icon right"><img src="images/resource/about-stone-right.svg" alt="" title=""></div>
+        <div class="auto-container">
+            <div class="row clearfix">
+                <!--Text Col-->
+                <div class="text-col col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner wow fadeInRight" data-wow-duration="1500ms" data-wow-delay="0ms">
+                        <div class="title-box">
+                            <div class="subtitle">About Treker</div>
+                            <h2><i class="bg-vector"></i><span>World Best Travel Agency</span></h2>
+                            <div class="text">Since 2014, we’ve helped more than 500,000 people of all ages enjoy the best outdoor experience of their lives. Whether it’s for one day or a two-week vacation, close to home or a foreign land.</div>
+                        </div>
+                        <div class="lower-box">
+                            <div class="lower-inner clearfix">
+                                <div class="text-content">
+                                    <ul>
+                                        <li>Ratione voluptatem.sequi nesciunt.</li>
+                                        <li>Ratione voluptatem.</li>
+                                        <li>Ratione voluptatem sequi.</li>
+                                    </ul>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--Image Col-->
+                <div class="image-col col-lg-6 col-md-12 col-sm-12">
+                    <div class="inner wow fadeInLeft" data-wow-duration="1500ms" data-wow-delay="0ms">
+                        <div class="bg-image">
+                            <img src="https://themeim.com/demo/treker/images/resource/about-vector-1.png" alt="" title="">
+                        </div>
+                        <div class="image-box">
+                            <img src="images/resource/about-image-1.svg" alt="" title="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Popular Section-->
+    <section class="popular-section">
+        <div class="bg-layer" style="background-image: url(https://themeim.com/demo/treker/images/background/image-1.jpg);"></div>
+        <div class="auto-container">
+            <div class="title-box centered">
+                <div class="subtitle">Modern & Beautiful</div>
+                <h2><i class="bg-vector"></i><span>Our Most Popular Trekking</span></h2>
+            </div>
+            <div class="carousel-box">
+                <div class="popular-carousel owl-theme owl-carousel">
+				
+                    <!-- Block -->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="packages.html"><img src="https://www.aljazeera.com/wp-content/uploads/2019/02/3c0b241bc21a4403833740e1d4b04f71_18.jpeg?resize=770%2C513&quality=80" alt="" title=""></a></div>
+                                <div class="price"><span>₹11120</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block"> Himalaya </span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="packages.html">Himalaya & Track</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="#">05 Review</a></div>
+                                </div>
+                                <div class="text">variety of landscapes, from serene valleys to majestic peaks. Enjoy luxurious accommodations and immerse yourself in diverse, thrilling adventures amidst the wild beauty of nature. </div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="Himalaya.html" class="theme-btn"><span>View Details <i class="icon"><img src="images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="Himalaya.html" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="packages.html"><img src="https://www.onthegotours.com/repository/The-Taj-Mahal--India-Tours--On-The-Go-Tours-298431462895266.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>₹5120</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">Agra</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="packages.html">Agra & Forst</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="packages.html">05 Review</a></div>
+                                </div>
+                                <div class="text">iconic Taj Mahal stands as a testament to eternal love and architectural brilliance.historical splendor of Agra Fort,unforgettable experiences in this magnificent city </div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="agra.html" class="theme-btn"><span>View Details <i class="icon"><img src="images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="agra.html" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="packages.html"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/640px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>₹4720</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">Jaipur & Culture</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="#">Jaipur & Culture</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="packages.html">05 Review</a></div>
+                                </div>
+                                <div class="text">City of Jaipur, where history comes alive through the stunning Amber Fort and the majestic Hawa Mahal.unforgettable adventures in the heart of Rajasthan. </div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="jaipur.html" class="theme-btn"><span>View Details <i class="icon"><img src="images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="jaipur.html" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Block -->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="packages.html"><img src="https://static.theprint.in/wp-content/uploads/2020/08/Untitled-design-2020-08-09T193331.340-1024x576.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>$120</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block"></span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="packages.html">Andaman and Nicobar Islands</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="#">05 Review</a></div>
+                                </div>
+                                <div class="text">Uncover the pristine beauty of the Andaman and Nicobar Islands,where crystal-clear waters and lush tropical landscapes awaitexhilarating adventures in this paradise destination. </div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="andaman-nicobar.html" class="theme-btn"><span>View Details <i class="icon"><img src="images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="andaman-nicobar.html" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="packages.html"><img src="https://jurnalpemalang.co.id/wp-content/uploads/2024/06/Majuli-River-Island-Assam-Tourist-Spots.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>₹8,999</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">Kaziranga, Majuli</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="packages.html">Beauty of Assam</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="packages.html">05 Reviews</a></div>
+                                </div>
+                                <div class="text">lush tea gardens and majestic Brahmaputra River create a captivating landscape. Enjoy luxurious accommodations and embark on diverse, unforgettable adventures in this enchanting region</div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="assam.html" class="theme-btn"><span>View Details <i class="icon"><img src="images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="assam.html" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="packages.html"><img src="https://static.toiimg.com/photo/76745146.cms" alt="" title=""></a></div>
+                                <div class="price"><span>₹10,999</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">North Goa, South Goa</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="packages.html">Goa and its Beaches & Bar's</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="packages.html">05 Reviews</a></div>
+                                </div>
+                                <div class="text">Relax on pristine beaches, enjoy vibrant nightlife, and savor delicious seafood in Goa. A perfect destination for sun-seekers and party lovers!</div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="Goa.html" class="theme-btn"><span>View Details <i class="icon"><img src="images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="Goa.html" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+					
+					<!-- Block -->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="packages.html"><img src="https://siliguritourism.com/wp-content/uploads/2024/01/Darjeeling-West-Bengal.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>₹9,999</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">Darjeeling, Tiger Hill</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="packages.html">Darjeeling & Hills</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="packages.html">05 Reviews</a></div>
+                                </div>
+                                <div class="text">Darjeeling, where rolling tea gardens and breathtaking views of the Himalayas await. Stay in luxurious accommodations and embark on diverse, unforgettable adventures in this picturesque hill station & Local train ride!</div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="darjeeling.html" class="theme-btn"><span>View Details <i class="icon"><img src="images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="darjeeling.html" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="packages.html"><img src="https://spiritualindiatours.com/wp-content/uploads/2018/12/Arrival-Delhi-transfer-to-Shimla.jpg" alt="" title=""></a></div>
+                                <div class="price"><span>₹9,499</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">Shimla, Kufri</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="packages.html">Shimla & Hill</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="packages.html">05 Reviews</a></div>
+                                </div>
+                                <div class="text">Discover the serene charm of Shimla, where pine-clad hills and colonial architecture create a picturesque landscapedive into diverse, unforgettable adventures in this beautiful hill station.</div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="shimla.html" class="theme-btn"><span>View Details <i class="icon"><img src="images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="shimla.html" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="trek-block-one">
+                        <div class="inner-box">
+                            <div class="image-box">
+                                <div class="image"><a href="packages.html"><img src="https://www.goindigo.in/content/dam/skyplus6e/in/en/assets/Destinations/MUMBAI/Gateway%20of%20India.jpeg" alt="" title=""></a></div>
+                                <div class="price"><span>₹11,999</span></div>
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">Mumbai, Gateway of India</span>
+                                </div>
+                            </div>
+                            <div class="lower-content">
+                                <h4><a href="packages.html">Mumbai & Bars</a></h4>
+                                <div class="ratings clearfix">
+                                    <div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star empty"></i></div>
+                                    <div class="rev"><a href="packages.html">05 Reviews</a></div>
+                                </div>
+                                <div class="text">Experience the vibrant energy of Mumbai, where iconic landmarks and bustling streets create an unforgettable urban landscape in the heart of India's financial capital!</div>
+                            </div>
+                            <div class="bottom-box clearfix">
+                                <div class="more-link"><a href="mumbai.html" class="theme-btn"><span>View Details <i class="icon"><img src="images/icons/logo-icon.svg" alt=""></i></span></a></div>
+                                <div class="video-link"><a href="mumbai.html" class="theme-btn"><i class="icon far fa-video-camera"></i></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Why Section-->
+    <section class="why-section">
+        <div class="floated-icon left"><img src="images/resource/stones-left.svg" alt="" title=""></div>
+        <div class="floated-icon right"><img src="images/resource/stones-right.svg" alt="" title=""></div>
+        <div class="auto-container">
+
+            <div class="title-box centered">
+                <div class="subtitle">We Are Awesome</div>
+                <h2><i class="bg-vector"></i><span>Why Choose Treker</span></h2>
+            </div>
+
+            <div class="row clearfix">
+                <div class="left-col col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner">
+                        <div class="why-block">
+                            <div class="inner-box">
+                                <div class="icon-box"><img src="images/resource/icon-1.svg" alt=""></div>
+                                <h4>Diverse Destinations</h4>
+                                <div class="text">Richly varied landscapes, luxury accommodation Travel.</div>
+                            </div>
+                        </div>
+                        <div class="why-block">
+                            <div class="inner-box">
+                                <div class="icon-box"><img src="images/resource/icon-2.svg" alt=""></div>
+                                <h4>Value for Money</h4>
+                                <div class="text">Richly varied landscapes, luxury accommodation Travel.</div>
+                            </div>
+                        </div>
+                        <div class="why-block">
+                            <div class="inner-box">
+                                <div class="icon-box"><img src="images/resource/icon-3.svg" alt=""></div>
+                                <h4>Beautiful Places</h4>
+                                <div class="text">Richly varied landscapes, luxury accommodation Travel.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="right-col col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner">
+                        <div class="why-block">
+                            <div class="inner-box">
+                                <div class="icon-box"><img src="images/resource/icon-4.svg" alt=""></div>
+                                <h4>Fast Booking</h4>
+                                <div class="text">Richly varied landscapes, luxury accommodation Travel.</div>
+                            </div>
+                        </div>
+                        <div class="why-block">
+                            <div class="inner-box">
+                                <div class="icon-box"><img src="images/resource/icon-5.svg" alt=""></div>
+                                <h4>Support Team</h4>
+                                <div class="text">Richly varied landscapes, luxury accommodation Travel.</div>
+                            </div>
+                        </div>
+                        <div class="why-block">
+                            <div class="inner-box">
+                                <div class="icon-box"><img src="images/resource/icon-6.svg" alt=""></div>
+                                <h4>Passionate Travel</h4>
+                                <div class="text">Richly varied landscapes, luxury accommodation Travel.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="image-col col-xl-6 col-lg-4 col-md-12 col-sm-12">
+                    <div class="inner">
+                        <div class="image-box"><img src="images/resource/why-image-1.svg" alt=""></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!--Trending Destinations Section-->
+    <section class="trending-destinations">
+        <div class="auto-container">
+
+            <div class="title-box centered">
+                <div class="subtitle">Top Destinations</div>
+                <h2><i class="bg-vector"></i><span>Trending Destinations</span></h2>
+            </div>
+
+            <div class="gallery-box">
+                <div class="masonry-container row clearfix">
+                    <!--Block-->
+                    <div class="dest-block-one masonry-item col-lg-8 col-md-12 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image-box"><a href="#"><img src="https://www.holidify.com/images/bgImages/HIMACHAL-PRADESH.jpg" alt=""></a></div>
+                            <div class="hvr-box">
+                                <div class="cap-box">
+                                    <div class="cap-inner clearfix">
+                                        <h4><a href="tours.html">Manali</a></h4>
+                                        <div class="tour-count"><span>15 Tours</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!--Block-->
+                    <div class="dest-block-one masonry-item column-width col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image-box"><a href="#"><img src="https://static.toiimg.com/photo/104277618/104277618.jpg" alt=""></a></div>
+                            <div class="hvr-box alt-hvr">
+                                <div class="cap-box">
+                                    <div class="cap-inner clearfix">
+                                        <h4><a href="tours.html">Shimla</a></h4>
+                                        <div class="tour-count"><span>15 Tours</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!--Block-->
+                    <div class="dest-block-one masonry-item col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image-box"><a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg/640px-East_facade_Hawa_Mahal_Jaipur_from_ground_level_%28July_2022%29_-_img_01.jpg" alt=""></a></div>
+                            <div class="hvr-box">
+                                <div class="cap-box">
+                                    <div class="cap-inner clearfix">
+                                        <h4><a href="tours.html">Rajasthan</a></h4>
+                                        <div class="tour-count"><span>15 Tours</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!--Block-->
+                    <div class="dest-block-one masonry-item col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image-box"><a href="#"><img src="https://static.theprint.in/wp-content/uploads/2020/08/Untitled-design-2020-08-09T193331.340-1024x576.jpg" alt=""></a></div>
+                            <div class="hvr-box">
+                                <div class="cap-box">
+                                    <div class="cap-inner clearfix">
+                                        <h4><a href="tours.html">Goa</a></h4>
+                                        <div class="tour-count"><span>15 Tours</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!--Block-->
+                    <div class="dest-block-one masonry-item column-width col-lg-4 col-md-6 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image-box"><a href="#"><img src="https://jurnalpemalang.co.id/wp-content/uploads/2024/06/Majuli-River-Island-Assam-Tourist-Spots.jpg" alt=""></a></div>
+                            <div class="hvr-box alt-hvr">
+                                <div class="cap-box">
+                                    <div class="cap-inner clearfix">
+                                        <h4><a href="tours.html">Darjeeling</a></h4>
+                                        <div class="tour-count"><span>15 Tours</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!--Block-->
+                    <div class="dest-block-one masonry-item col-lg-8 col-md-12 col-sm-12">
+                        <div class="inner-box">
+                            <div class="image-box"><a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRi0V-gLi0OTLRbTFiw3R1QnhwX-tpWvskpBQ&s" alt=""></a></div>
+                            <div class="hvr-box">
+                                <div class="cap-box">
+                                    <div class="cap-inner clearfix">
+                                        <h4><a href="tours.html">Assam</a></h4>
+                                        <div class="tour-count"><span>15 Tours</span></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Products Section-->
+    <!-- <section class="products-section">
+        <div class="floated-icon left"><img src="images/resource/stones-left.svg" alt="" title=""></div>
+        <div class="floated-icon right"><img src="images/resource/stones-right.svg" alt="" title=""></div>
+        <div class="auto-container">
+
+            <div class="title-box centered">
+                <div class="subtitle">Shop Now</div>
+                <h2><i class="bg-vector"></i><span>Featured Trekking Products</span></h2>
+            </div>
+
+            <div class="row clearfix">
+                Block-->
+                <!-- <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="product-single.html"><img src="images/resource/shop/prod-1.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="product-single.html" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="product-single.html">Smart Air Bag Travel</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> -->
+
+                <!--Block-->
+                <!-- <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="product-single.html"><img src="images/resource/shop/prod-2.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="product-single.html" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="product-single.html">Travel Suitcase Bag</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> -->
+
+                <!--Block-->
+                <!-- <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="product-single.html"><img src="images/resource/shop/prod-3.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="product-single.html" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="product-single.html">Travel Light Suitcase</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> -->
+
+                <!--Block-->
+                <!-- <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="product-single.html"><img src="images/resource/shop/prod-4.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="product-single.html" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="product-single.html">Smart Travel Gadgets</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> -->
+
+                <!--Block-->
+                <!-- <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="product-single.html"><img src="images/resource/shop/prod-5.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="product-single.html" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="product-single.html">Set of Black Silk Pillow</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> -->
+
+                <!--Block-->
+                <!-- <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="product-single.html"><img src="images/resource/shop/prod-6.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="product-single.html" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="product-single.html">Travel Slipping Support</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> -->
+
+                <!--Block-->
+                <!-- <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="product-single.html"><img src="images/resource/shop/prod-7.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="product-single.html" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="product-single.html">Travelling Black Suitcase</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div> -->
+				
+                <!--Block-->
+                <!-- <div class="prod-block col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                    <div class="inner-box">
+                        <div class="why-block">
+                            <div class="image-box">
+                                <div class="image"><a href="product-single.html"><img src="images/resource/shop/prod-8.jpg" alt=""></a></div>
+                                <div class="hvr-box">
+                                    <div class="hvr-inner">
+                                        <div class="hvr-content">
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-shopping-cart"></i> Add To Cart</a></div>
+                                            <div class="link"><a href="product-single.html" class="theme-btn"><i class="far fa-bars"></i> Details</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="add-fav"><a href="product-single.html" class="theme-btn"><i class="far fa-heart"></i></a></div>
+                            </div>
+                            <div class="lower-box">
+                                <h5><a href="product-single.html">Coffee Travel Mug</a></h5>
+                                <div class="price"><span>$225.00</span></div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="see-more-link"><a href="shop.html" class="theme-btn btn-style-one"><span>View All Products <i class="icon"><img src="images/icons/logo-icon.svg" alt="" title=""></i></span></a></div>
+        </div>
+    </section> -->
+
+    <!--Group Travel Section-->
+    <!-- <section class="group-travel">
+        <div class="bg-layer" style="background-image: url(images/background/image-2.jpg);"></div>
+        <div class="auto-container">
+            <div class="content-box">
+                <div class="row clearfix">
+                    <div class="travel-block-one col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-box">
+                            <div class="title"><h4>Group Travel to Himalay</h4></div>
+                            <div class="content">
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
+                                </div>
+                                <div class="price"><span>$235.00</span></div>
+                                <div class="text">Richly varied landscapes, luxurious accommodation and a wide range of wild experiences await you. </div>
+                                <div class="link-box"><a href="#" class="theme-btn btn-style-one"><span>View Details <i class="icon"><img src="images/icons/logo-icon.svg" alt="" title=""></i></span></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="travel-block-one alternate col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner-box">
+                            <div class="title"><h4>Group Travel to Himalay</h4></div>
+                            <div class="content">
+                                <div class="info">
+                                    <span class="i-block"><i class="icon far fa-clock"></i> 5 days</span> &ensp; | &ensp; <span class="i-block">259P, Himalaya Ag</span>
+                                </div>
+                                <div class="price"><span>$235.00</span></div>
+                                <div class="text">Richly varied landscapes, luxurious accommodation and a wide range of wild experiences await you. </div>
+                                <div class="link-box"><a href="#" class="theme-btn btn-style-one"><span>View Details <i class="icon"><img src="images/icons/logo-icon.svg" alt="" title=""></i></span></a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- <section class="testimonials-one">
+        <div class="bg-layer" style="background-image: url(images/background/image-3.jpg);"></div>
+        <div class="auto-container">
+            <div class="title-box centered">
+                <div class="subtitle">Review & Testimonial</div>
+                <h2><i class="bg-vector"></i><span>Top Reviews for Treker</span></h2>
+            </div>
+            <div class="carousel-box">
+                <div class="testi-carousel owl-theme owl-carousel">
+                    <div class="testi-block">
+                        <div class="inner-box">
+                            <div class="icon"><img src="images/icons/quotes-1.svg" alt=""></div>
+                            <div class="image"><img src="images/resource/testi-thumb-1.jpg" alt=""></div>
+                            <div class="text">Fight School has specialized in martial arts since 1986 and has one of the most Fight School has specialized.</div>
+                            <div class="info">
+                                <div class="name">Randall Schwartz</div>
+                                <div class="clearfix">
+                                    <div class="designation">Women's Trainner</div>
+                                    <div class="rating"><div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-block">
+                        <div class="inner-box">
+                            <div class="icon"><img src="images/icons/quotes-1.svg" alt=""></div>
+                            <div class="image"><img src="images/resource/testi-thumb-2.jpg" alt=""></div>
+                            <div class="text">We teach martial arts because we love it — not because we want to make money on you. Unlike other martial.</div>
+                            <div class="info">
+                                <div class="name">Andru Smith</div>
+                                <div class="clearfix">
+                                    <div class="designation">Boxing Trainer</div>
+                                    <div class="rating"><div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-block alternate">
+                        <div class="inner-box">
+                            <div class="image-layer" style="background-image: url(images/background/testi-image-1.jpg);"></div>
+                            <div class="over-box">
+                                <div class="over-title"><a href="#">MASTER TREKER TRAVEL</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-block">
+                        <div class="inner-box">
+                            <div class="icon"><img src="images/icons/quotes-1.svg" alt=""></div>
+                            <div class="image"><img src="images/resource/testi-thumb-1.jpg" alt=""></div>
+                            <div class="text">Fight School has specialized in martial arts since 1986 and has one of the most Fight School has specialized.</div>
+                            <div class="info">
+                                <div class="name">Randall Schwartz</div>
+                                <div class="clearfix">
+                                    <div class="designation">Women's Trainner</div>
+                                    <div class="rating"><div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-block">
+                        <div class="inner-box">
+                            <div class="icon"><img src="images/icons/quotes-1.svg" alt=""></div>
+                            <div class="image"><img src="images/resource/testi-thumb-2.jpg" alt=""></div>
+                            <div class="text">We teach martial arts because we love it — not because we want to make money on you. Unlike other martial.</div>
+                            <div class="info">
+                                <div class="name">Andru Smith</div>
+                                <div class="clearfix">
+                                    <div class="designation">Boxing Trainer</div>
+                                    <div class="rating"><div class="stars"><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i></div></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="testi-block alternate">
+                        <div class="inner-box">
+                            <div class="image-layer" style="background-image: url(images/background/testi-image-1.jpg);"></div>
+                            <div class="over-box">
+                                <div class="over-title"><a href="#">MASTER TREKER TRAVEL</a></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!--Sponsors Section-->
+    <!-- <section class="sponsors-one">
+        <div class="auto-container">
+            <div class="carousel-box">
+                <div class="sponsors-carousel owl-theme owl-carousel">
+                    <div class="sponsor-block">
+                        <div class="inner-box">
+                            <div class="image"><a href="#"><img src="images/resource/sponsor-1.png" alt=""></a></div>
+                        </div>
+                    </div>
+
+                    <div class="sponsor-block">
+                        <div class="inner-box">
+                            <div class="image"><a href="#"><img src="images/resource/sponsor-2.png" alt=""></a></div>
+                        </div>
+                    </div>
+
+                    <div class="sponsor-block">
+                        <div class="inner-box">
+                            <div class="image"><a href="#"><img src="images/resource/sponsor-3.png" alt=""></a></div>
+                        </div>
+                    </div>
+
+                 <div class="sponsor-block">
+                        <div class="inner-box">
+                            <div class="image"><a href="#"><img src="images/resource/sponsor-4.png" alt=""></a></div>
+                        </div>
+                    </div>
+
+                    <div class="sponsor-block">
+                        <div class="inner-box">
+                            <div class="image"><a href="#"><img src="images/resource/sponsor-1.png" alt=""></a></div>
+                        </div>
+                    </div>
+
+                    <div class="sponsor-block">
+                        <div class="inner-box">
+                            <div class="image"><a href="#"><img src="images/resource/sponsor-2.png" alt=""></a></div>
+                        </div>
+                    </div>
+
+                    <div class="sponsor-block">
+                        <div class="inner-box">
+                            <div class="image"><a href="#"><img src="images/resource/sponsor-3.png" alt=""></a></div>
+                        </div>
+                    </div>
+
+                    <div class="sponsor-block">
+                        <div class="inner-box">
+                            <div class="image"><a href="#"><img src="images/resource/sponsor-4.png" alt=""></a></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!--News Section-->
+    <section class="news-section">
+        <div class="floated-icon left"><img src="images/resource/stones-left.svg" alt="" title=""></div>
+        <div class="floated-icon right"><img src="images/resource/stones-right.svg" alt="" title=""></div>
+        <div class="bg-layer" style="background-image: url(images/background/image-1.jpg);"></div>
+        <div class="auto-container">
+            <div class="title-box centered">
+                <div class="subtitle">Treker Top News</div>
+                <h2><i class="bg-vector"></i><span>Treker Latest News</span></h2>
+            </div>
+            <div class="content-box">
+                <div class="row clearfix">
+                    <!--Block-->
+                    <div class="news-block-one col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <div class="image-box">
+                                <div class="image"><a href="blog-single.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxeW8NH6XBopfnV8EYRdS-jHlogCA3tlu74RSz2p0r9xtOsYTJsszEaB0UbIvv1zWIzbw&usqp=CAU" alt="" title=""></a></div>
+                                <div class="cat"><span>Trekking</span></div>
+                            </div>
+                            <div class="lower-content">
+                                <div class="info">
+                                    <span class="i-block">By : Sword Joy</span> &ensp; | &ensp; <span class="i-block">20 March 2022</span>
+                                </div>
+                                <h4><a href="blog-single.html">THE UPCOMING WBC CHAMP SHIPS 2022 in feb</a></h4>
+                                <div class="text">Fight School has specialized in martial arts since 1986 and has one of the most innovative.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="news-block-one alternate col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInUp" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <div class="lower-content">
+                                <div class="info">
+                                    <span class="i-block">By : Sword Joy</span> &ensp; | &ensp; <span class="i-block">20 March 2022</span>
+                                </div>
+                                <h4><a href="blog-single.html">THE BEST BOXERS IN THEIR WEIGH Target CATEGOR</a></h4>
+                                <div class="text">Fight School has specialized in martial arts since 1986 and has one of the most innovative.</div>
+                            </div>
+                            <div class="image-box">
+                                <div class="image"><a href="blog-single.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIyEfPWlnEPIWAFe78teHYpSfbbLv7hG0YId1AbxAC0VHA2i9n-SLVC3KwZgpyHWFWsKY&usqp=CAU" alt="" title=""></a></div>
+                                <div class="cat"><span>Trekking</span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Block-->
+                    <div class="news-block-one col-xl-4 col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner-box wow fadeInRight" data-wow-delay="0ms" data-wow-duration="1500ms">
+                            <div class="image-box">
+                                <div class="image"><a href="blog-single.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6YloKNwR80RlFyIlVE6ZwrPWc3-AfiN6mS6gUa_DkiOTWQLoNuMpY09DvSUD-LXC3TBc&usqp=CAU" alt="" title=""></a></div>
+                                <div class="cat"><span>Trekking</span></div>
+                            </div>
+                            <div class="lower-content">
+                                <div class="info">
+                                    <span class="i-block">By : Sword Joy</span> &ensp; | &ensp; <span class="i-block">20 March 2022</span>
+                                </div>
+                                <h4><a href="blog-single.html">EFFECTIVE STRATEGIES & TIPS FROM THE BEST</a></h4>
+                                <div class="text">Fight School has specialized in martial arts since 1986 and has one of the most innovative.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Subscribe Section-->
+    <section class="subscribe-section">
+        
+        <div class="auto-container">
+            <div class="content-box">
+                <div class="bg-layer" style="color: aquamarine;"></div>
+                <div class="row clearfix">
+                    <div class="image-col col-xl-5 col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner">
+                            <div class="image"><img src="images/resource/newsletter-image.svg" alt=""></div>
+                        </div>
+                    </div>
+
+                    <div class="text-col col-xl-7 col-lg-6 col-md-12 col-sm-12">
+                        <div class="inner">
+                            <div class="title">
+                                <div class="subtitle">Newsletter</div>
+                                <h2>SUBSCRIBE NOW</h2>
+                                <div class="text">Fight School has specialized in martial arts since 1986 and has one of the most innovative programs in the nation.</div>
+                            </div>
+                            <div class="form-box subscribe-form">
+                                <form method="post" action="index.html">
+                                    <div class="form-group">
+                                        <div class="field-inner">
+                                            <span class="icon alt-icon far fa-envelope"></span>
+                                            <input type="email" name="email" value="" placeholder="Email Address">
+                                        </div>
+                                        <button type="submit" class="theme-btn btn-style-one"><span>SUBSCRIBE <i class="icon fa fa-paper-plane"></i></span></button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--Main Footer-->
+    <footer class="main-footer">
+        <div class="bg-layer" style="background-image: url(images/background/f-bottom-bg.svg);"></div>
+        <div class="floated-icon"><img src="images/resource/footer-stones.svg" alt="" title=""></div>
+        <div class="info-section">
+            <div class="auto-container">
+
+                <div class="row clearfix">
+
+                    <div class="footer-column col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                        <!--Logo-->
+                        <div class="footer-logo">
+                            <div class="logo"><a href="index.html" title="Treker"><img src="images/logo.svg" alt="" title="Treker"></a></div>
+                        </div>
+                        <div class="footer-text">Treker was founded in 2025 by a group of safety-focused professionals who created The Wingman Standard for rigorously vetting air charter operators.</div>
+                    </div>
+
+                    <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
+                        <div class="row clearfix">
+
+                            <div class="info-block col-lg-4 col-md-4 col-sm-12">
+                                <h6>EUROPE</h6>
+                                <div class="info">
+                                    <ul>
+                                        <li>Europe 45 Gloucester Road London DT1M 3BF</li>
+                                        <li><a href="tel:+44(0)2036715709">+44 (0)20 3671 5709</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="info-block col-lg-4 col-md-4 col-sm-12">
+                                <h6>ASIA & PACIFIC</h6>
+                                <div class="info">
+                                    <ul>
+                                        <li>2473 Red Road Ste 98 Mumbai MUM</li>
+                                        <li><a href="tel:+16232116319">+ 91 623 211 6319</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="info-block col-lg-4 col-md-4 col-sm-12">
+                                <h6>NORTH AMERICA</h6>
+                                <div class="info">
+                                    <ul>
+                                        <li>Europe 45 Gloucester Road London DT1M 3BF</li>
+                                        <li><a href="tel:+44(0)2036715709">+44 (0)20 3671 5709</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lower-section">
+            <div class="auto-container">
+                <div class="content-box">
+                    <div class="row clearfix">
+
+                        <div class="col-xl-8 col-lg-12 col-md-12 col-sm-12">
+                            <div class="row clearfix">
+
+                                <div class="footer-column col-lg-4 col-md-4 col-sm-12">
+                                    <h6>About us</h6>
+                                    <div class="links">
+                                        <ul>
+                                            <li><a href="#">About Us</a></li>
+                                            <li><a href="#">Community Blog</a></li>
+                                            <li><a href="#">Rewards</a></li>
+                                            <li><a href="#">Work with Us</a></li>
+                                            <li><a href="#">Contact</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="footer-column col-lg-4 col-md-4 col-sm-12">
+                                    <h6>Exlopre Treker</h6>
+                                    <div class="links">
+                                        <ul>
+                                            <li><a href="#">Account</a></li>
+                                            <li><a href="#">Privacy Policy</a></li>
+                                            <li><a href="#">Affilitate</a></li><li><a href="#">Program</a></li>
+                                            <li><a href="#">Our Partner</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="footer-column col-lg-4 col-md-4 col-sm-12">
+                                    <h6>Quick lInks</h6>
+                                    <div class="links">
+                                        <ul>
+                                            <li><a href="#">About us</a></li>
+                                            <li><a href="#">News & press</a></li>
+                                            <li><a href="#">Blog</a></li>
+                                            <li><a href="#">FAQs</a></li>
+                                            <li><a href="#">Careers</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="f-bottom">
+            <div class="auto-container">
+                <div class="inner clearfix">
+                    <div class="social-links">
+                        <ul class="clearfix">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                    <div class="copyright">Copyright &copy; 2025 Treker. All Rights Reserved. Design with &hearts;</div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+
+</div>
+<!--End pagewrapper--> 
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon"><img src="images/icons/arrow-up.svg" alt="" title="Go To Top"></span></div>
+
+<script src="js/jquery.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/isotope.js"></script>
+<script src="js/touchspin.js"></script>
+<script src="js/owl.js"></script>
+<script src="js/wow.js"></script>
+<script src="js/custom-script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>

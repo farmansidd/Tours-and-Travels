@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Treker - Admin Bookings Dashboard</title>
+<!-- Stylesheets -->
+<link href="css/bootstrap.css" rel="stylesheet">
+<link href="css/style.css" rel="stylesheet">
+<link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+<link rel="icon" href="images/favicon.png" type="image/x-icon">
+<!-- Responsive -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link href="css/responsive.css" rel="stylesheet">
+<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+
+<style>
+    .admin-dashboard {
+        padding: 50px 0;
+    }
+    .admin-header {
+        margin-bottom: 30px;
+    }
+    .admin-card {
+        background: #f8f8f8;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .booking-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+    .booking-table th, 
+    .booking-table td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+    }
+    .booking-table thead {
+        background-color: #f5f5f5;
+    }
+    .booking-table tbody tr:hover {
+        background-color: #f2f2f2;
+    }
+    .status-pending {
+        color: #f39c12;
+        font-weight: bold;
+    }
+    .status-confirmed {
+        color: #27ae60;
+        font-weight: bold;
+    }
+    .status-cancelled {
+        color: #e74c3c;
+        font-weight: bold;
+    }
+    .status-completed {
+        color: #2980b9;
+        font-weight: bold;
+    }
+    .action-buttons button {
+        margin-right: 5px;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+    .btn-confirm {
+        background: #27ae60;
+        color: white;
+    }
+    .btn-cancel {
+        background: #e74c3c;
+        color: white;
+    }
+    .btn-complete {
+        background: #2980b9;
+        color: white;
+    }
+    .btn-delete {
+        background: #7f8c8d;
+        color: white;
+    }
+    .dashboard-stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin-bottom: 30px;
+    }
+    .stat-card {
+        flex: 1;
+        min-width: 200px;
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+    .stat-number {
+        font-size: 28px;
+        font-weight: bold;
+        margin: 10px 0;
+    }
+    .stat-label {
+        color: #7f8c8d;
+        font-size: 14px;
+    }
+    .no-bookings {
+        text-align: center;
+        padding: 40px;
+        color: #7f8c8d;
+    }
+    .filter-section {
+        margin-bottom: 20px;
+        display: flex;
+        gap: 15px;
+    }
+    .filter-section select, .filter-section input {
+        padding: 8px 15px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+    }
+    .export-btn {
+        margin-left: auto;
+        background: #3498db;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        padding: 8px 15px;
+        cursor: pointer;
+    }
+</style>
+</head>
+
+<body>
+  <div class="page-wrapper"> 
+  
+    <!-- Preloader -->
+    <div class="preloader"></div> 
+    <div class="search-backdrop"></div>
+    
+    <!-- Main Header-->
+    <header class="main-header">
+        <div class="header-top">
+            <div class="auto-container">
+                <div class="inner clearfix">
+                    <div class="top-left clearfix">
+                        <ul class="info clearfix">
+                            <li><i class="icon fa fa-envelope"></i> <a href="mailto:INFO@TREKER.COM">INFO@TREKER.COM</a></li>
+                            <li><i class="icon fa fa-phone-circle"></i> <a href="tel:+11256326501">+11 256 3265 01</a></li>
+                        </ul>
+                    </div>
+                    <div class="top-right clearfix">
+                        <div class="lang-box">
+                            <div class="lang-btn clearfix"><span class="img far fa-globe-americas"></span><span class="txt">Eng</span><span class="icon far fa-angle-down"></span></div>
+                            <ul class="lang-list">
+                                <li><a href="#">Tur</a></li>
+                                <li><a href="#">Esp</a></li>
+                                <li><a href="#">Rus</a></li>
+                            </ul>
+                        </div>
+                        <div class="login"><i class="icon fa fa-user"></i> <a href="login.html">SIGN IN</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Upper -->
+        <div class="header-upper">        
+            <div class="auto-container">
+                <!-- Main Box -->
+                <div class="main-box clearfix">
+                    <!--Logo-->
+                    <div class="logo-box">
+                         <div class="logo"><a href="index.html" title="Treker"><img src="images/logo.svg" alt="" title="Treker"></a></div>
+                    </div>
+
+                    <div class="nav-box clearfix">
+                        <!--Nav Outer-->
+                        <div class="nav-outer clearfix">         
+                            <nav class="main-menu">
+                                <ul class="navigation clearfix">
+                                    <li class="dropdown"><a href="index.html">Home</a>
+                                        <ul>
+                                            <li><a href="index.html">Home 01</a></li>
+                                            <li><a href="index-2.html">Home 02</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown"><a href="about.html">About Us</a>
+                                        <ul>
+                                            <li><a href="team.html">Our Team</a></li>
+                                            <li><a href="team-member.html">Team Member</a></li>
+                                            <li><a href="faq.html">FAQs</a></li>
+                                            <li><a href="gallery.html">Gallery</a></li>
+                                        </ul>
+                                    </li>
+                                  
+                                    <li><a href="destinations.html">Destinations</a></li>
+                                   
+                                    <li class="dropdown"><a href="#">Explore</a>
+                                        <ul>
+                                            <li><a href="himalaya.html">Himalaya</a></li>
+                                            <li><a href="mumbai.html">Mumbai</a></li>
+                                            <li><a href="shimla.html">Shimla</a></li>
+                                            <li><a href="darjeeling.html">Darjeeling</a></li>
+                                            <li><a href="goa.html">Goa</a></li>
+                                            <li><a href="jaipur.html">Jaipur</a></li>
+                                            <li><a href="andaman-nicobar.html">Andaman & Nicobar Islands</a></li>
+                                            <li><a href="agra.html">Agra</a></li>
+                                            <li><a href="assam.html">Assam</a></li>
+                                        </ul>
+                                    </li>
+                                    
+                                    <li class="dropdown"><a href="blogs.html">Blogs</a></li>
+                                    <li><a href="signup.html">Sign Up</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                </ul>
+                            </nav>
+                            <!-- Main Menu End-->
+                        </div>
+                        <!--Nav Outer End-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!--End Main Header -->
+
+    <!-- Banner Section -->
+    <section class="inner-banner">
+        <div class="image-layer" style="background-image: url(images/background/banner-image-1.jpg);"></div>
+        <div class="auto-container">
+            <div class="content-box">
+                <h2>Bookings Dashboard</h2>
+                <div class="bread-crumb">
+                    <ul class="clearfix">
+                        <li><span class="icon-home fa fa-home"></span><a href="index.html">Home</a></li>
+                        <li class="current">Admin Dashboard</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Banner Section -->
+
+    <!-- Admin Dashboard Section -->
+    <section class="admin-dashboard">
+        <div class="auto-container">
+            <div class="admin-header">
+                <h3>Booking Management System</h3>
+                <p>Manage all bookings from all destinations in one place</p>
+            </div>
+
+            <div class="dashboard-stats">
+                <div class="stat-card">
+                    <div class="stat-number" id="total-bookings">0</div>
+                    <div class="stat-label">Total Bookings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="pending-bookings">0</div>
+                    <div class="stat-label">Pending Bookings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="confirmed-bookings">0</div>
+                    <div class="stat-label">Confirmed Bookings</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="completed-bookings">0</div>
+                    <div class="stat-label">Completed Tours</div>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <h4>All Bookings</h4>
+                
+                <div class="filter-section">
+                    <select id="destination-filter">
+                        <option value="">All Destinations</option>
+                        <option value="Himalaya">Himalaya</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Shimla">Shimla</option>
+                        <option value="Darjeeling">Darjeeling</option>
+                        <option value="Goa">Goa</option>
+                        <option value="Jaipur">Jaipur</option>
+                        <option value="Andaman & Nicobar">Andaman & Nicobar</option>
+                        <option value="Agra">Agra</option>
+                        <option value="Assam">Assam</option>
+                    </select>
+                    
+                    <select id="status-filter">
+                        <option value="">All Status</option>
+                        <option value="Pending">Pending</option>
+                        <option value="Confirmed">Confirmed</option>
+                        <option value="Cancelled">Cancelled</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                    
+                    <input type="text" id="search-input" placeholder="Search by name or email">
+                    
+                    <button class="export-btn" id="export-csv">Export to CSV</button>
+                </div>
+                
+                <div id="bookings-container">
+                    <!-- Table will be inserted here via JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--Main Footer-->
+    <footer class="footer-two">
+        <div class="bg-layer" style="background-image: url(images/background/footer-bg.png);"></div>
+        <div class="upper-section">
+            <div class="auto-container">
+                <div class="row clearfix">
+                    <div class="footer-column col-xl-4 col-lg-12 col-md-12 col-sm-12">
+                        <!--Logo-->
+                        <div class="footer-logo">
+                            <div class="logo"><a href="index.html" title="Treker"><img src="images/logo.svg" alt="" title="Treker"></a></div>
+                        </div>
+                        <div class="footer-text">Treker was founded in 1991 by a group of safety-focused professionals who created The Wingman Standard for rigorously vetting air charter operators.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="f-bottom">
+            <div class="auto-container">
+                <div class="inner clearfix">
+                    <div class="copyright">Copyright &copy; 2023 Treker. All Rights Reserved.</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<!--End pagewrapper--> 
+
+<!--Scroll to top-->
+<div class="scroll-to-top scroll-to-target" data-target="html"><span class="icon"><img src="images/icons/arrow-up.svg" alt="" title="Go To Top"></span></div>
+
+<script src="js/jquery.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/jquery-ui.js"></script>
+<script src="js/jquery.fancybox.js"></script>
+<script src="js/bookings-manager.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    loadAndDisplayBookings();
+    setupFilters();
+    setupExportButton();
+    
+    // Update stats initially
+    updateDashboardStats();
+});
+
+function loadAndDisplayBookings() {
+    try {
+        const bookings = getAllBookings();
+        renderBookingsTable(bookings);
+        updateDashboardStats();
+        
+        // Hide the preloader after loading bookings
+        document.querySelector('.preloader').style.display = 'none';
+    } catch (error) {
+        console.error('Error loading bookings:', error);
+        alert('There was an error loading the bookings. Please try again later.');
+    }
+}
+
+function renderBookingsTable(bookings) {
+    const container = document.getElementById('bookings-container');
+    
+    if (!bookings || bookings.length === 0) {
+        container.innerHTML = `
+            <div class="no-bookings">
+                <h3>No bookings found</h3>
+                <p>Once customers make bookings, they will appear here.</p>
+            </div>
+        `;
+        return;
+    }
+
+    // Debugging: Log the bookings data
+    console.log('Bookings data:', bookings);
+
+    
+    let tableHTML = `
+        <table class="booking-table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Date Booked</th>
+                    <th>Customer</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                    <th>Destination</th>
+                    <th>Travel Date</th>
+                    <th>Travelers</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+    `;
+    
+    bookings.forEach(booking => {
+        const bookingDate = new Date(booking.bookingDate).toLocaleDateString();
+        const travelDate = new Date(booking.date).toLocaleDateString();
+        
+        tableHTML += `
+            <tr data-id="${booking.id}">
+                <td>${booking.id}</td>
+                <td>${bookingDate}</td>
+                <td>${booking.username}</td>
+                <td>${booking.email}</td>
+                <td>${booking.phone}</td>
+                <td>${booking.destination}</td>
+                <td>${travelDate}</td>
+                <td>${booking.travelers}</td>
+                <td class="status-${booking.status.toLowerCase()}">${booking.status}</td>
+                <td class="action-buttons">
+                    ${booking.status === 'Pending' ? `<button class="btn-confirm" onclick="changeStatus('${booking.id}', 'Confirmed')">Confirm</button>` : ''}
+                    ${booking.status === 'Confirmed' ? `<button class="btn-complete" onclick="changeStatus('${booking.id}', 'Completed')">Complete</button>` : ''}
+                    ${booking.status !== 'Cancelled' && booking.status !== 'Completed' ? `<button class="btn-cancel" onclick="changeStatus('${booking.id}', 'Cancelled')">Cancel</button>` : ''}
+                    <button class="btn-delete" onclick="removeBooking('${booking.id}')">Delete</button>
+                </td>
+            </tr>
+        `;
+    });
+    
+    tableHTML += `
+            </tbody>
+        </table>
+    `;
+    
+    container.innerHTML = tableHTML;
+}
+
+function changeStatus(bookingId, newStatus) {
+    if (confirm(`Are you sure you want to mark this booking as ${newStatus}?`)) {
+        updateBookingStatus(bookingId, newStatus);
+        loadAndDisplayBookings();
+    }
+}
+
+function removeBooking(bookingId) {
+    if (confirm('Are you sure you want to delete this booking? This action cannot be undone.')) {
+        deleteBooking(bookingId);
+        loadAndDisplayBookings();
+    }
+}
+
+function updateDashboardStats() {
+    const bookings = getAllBookings();
+    
+    document.getElementById('total-bookings').textContent = bookings.length;
+    
+    const pendingCount = bookings.filter(b => b.status === 'Pending').length;
+    document.getElementById('pending-bookings').textContent = pendingCount;
+    
+    const confirmedCount = bookings.filter(b => b.status === 'Confirmed').length;
+    document.getElementById('confirmed-bookings').textContent = confirmedCount;
+    
+    const completedCount = bookings.filter(b => b.status === 'Completed').length;
+    document.getElementById('completed-bookings').textContent = completedCount;
+}
+
+function setupFilters() {
+    const destinationFilter = document.getElementById('destination-filter');
+    const statusFilter = document.getElementById('status-filter');
+    const searchInput = document.getElementById('search-input');
+    
+    function applyFilters() {
+        const destinationValue = destinationFilter.value;
+        const statusValue = statusFilter.value;
+        const searchValue = searchInput.value.toLowerCase();
+        
+        let filteredBookings = getAllBookings();
+        
+        if (destinationValue) {
+            filteredBookings = filteredBookings.filter(b => b.destination === destinationValue);
+        }
+        
+        if (statusValue) {
+            filteredBookings = filteredBookings.filter(b => b.status === statusValue);
+        }
+        
+        if (searchValue) {
+            filteredBookings = filteredBookings.filter(b => 
+                b.username.toLowerCase().includes(searchValue) || 
+                b.email.toLowerCase().includes(searchValue) ||
+                b.phone.includes(searchValue)
+            );
+        }
+        
+        renderBookingsTable(filteredBookings);
+    }
+    
+    destinationFilter.addEventListener('change', applyFilters);
+    statusFilter.addEventListener('change', applyFilters);
+    searchInput.addEventListener('input', applyFilters);
+}
+
+function setupExportButton() {
+    document.getElementById('export-csv').addEventListener('click', function() {
+        const bookings = getAllBookings();
+        if (bookings.length === 0) {
+            alert('No bookings to export.');
+            return;
+        }
+        
+        // Create CSV content
+        let csvContent = "ID,Date Booked,Customer,Email,Phone,Destination,Travel Date,Travelers,Status\n";
+        
+        bookings.forEach(booking => {
+            const bookingDate = new Date(booking.bookingDate).toLocaleDateString();
+            const travelDate = new Date(booking.date).toLocaleDateString();
+            
+            csvContent += `${booking.id},${bookingDate},"${booking.username}",${booking.email},${booking.phone},${booking.destination},${travelDate},${booking.travelers},${booking.status}\n`;
+        });
+        
+        // Create download link
+        const encodedUri = encodeURI("data:text/csv;charset=utf-8," + csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "treker-bookings.csv");
+        document.body.appendChild(link);
+        
+        // Trigger download and remove link
+        link.click();
+        document.body.removeChild(link);
+    });
+}
+</script>
+</body>
+</html>
